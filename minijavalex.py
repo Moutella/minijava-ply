@@ -29,7 +29,7 @@ tokens = [
     'ID',
     'NUMBER',
     'LPAREN',
-    'RPAREN', 
+    'RPAREN',
     'LBRACKET',
     'RBRACKET',
     'LCURLY',
@@ -52,7 +52,7 @@ tokens = [
 ] + list(reserved.values())
 
 t_ignore_WS = r'[ \n\t\r\f]'
-t_ignore_COMMENT = r''
+t_ignore_COMMENT = r'\/\/.* | \/\.\*\/'
 #t_ID = r'[a-zA-Z][a-zA-Z0-9_]*'
 #t_NUMBER = r'[0-9]+'
 t_LPAREN = r'\('
@@ -77,25 +77,38 @@ t_TIMES = r'\*'
 t_AND = r'&&'
 t_NOT = r'!'
 
+
 def t_NUMBER(t):
     r'[0-9]+'
     t.value = int(t.value)
     return t
 
+
 def t_ID(t):
     r'[a-zA-Z][a-zA-Z0-9_]*'
-    t.type = reserved.get(t.value,'ID')    # Check for reserved words
+    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
     return t
-    
+
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
-lexer = lex.lex()
+
+def t_error(t):
+    print("Illegal character '%s'" % t.value[0])
+    t.lexer.skip(1)
+
+
+lexer = lex.lex(debug=1)
 
 sourcefile = open('example.minijava', "r")
 code = sourcefile.readlines()
-data = code
+codetxt = ''
+for line in code:
+    codetxt += line
+
+lexer.input(codetxt)
 
 while True:
     tok = lexer.token()
