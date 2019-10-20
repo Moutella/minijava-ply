@@ -100,7 +100,7 @@ def t_error(t):
     t.lexer.skip(1)
 
 
-lexer = lex.lex(debug=1)
+lexer = lex.lex()
 
 sourcefile = open('example.minijava', "r")
 code = sourcefile.readlines()
