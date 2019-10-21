@@ -1,0 +1,67 @@
+prog => main classes
+classes => classes classe
+classes => classe
+main => CLASS ID '{' PUBLIC STATIC VOID MAIN '(' sTRING '[' ']' ID ')'
+'{' cmd '}' '}'
+classe => CLASS ID EXTENDS ID '{' vars metodos '}'
+classe => CLASS ID '{' vars metodos '}'
+vars => var
+vars=> vars var
+var => tipo ID ;
+var => ID ID ;
+metodos => metodo
+metodos => metodos metodo
+metodo => PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ; '}'
+metodo => PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ; '}'
+metodo => PUBLIC ID ID '(' params ')' '{' vars cmds RETURN exp ; '}'
+metodo => PUBLIC ID ID '(' ')' '{' vars cmds RETURN exp ; '}'
+params => tipo ID
+params => params, tipo ID
+params => ID ID 
+params => params, ID ID 
+tipo => INT '[' ']'
+    | BOOLEAN
+    | INT
+cmds => cmd
+cmds => cmds cmd
+cmd => '{' {cmd} '}'
+     | IF '(' exp ')' cmd
+     | IF '(' exp ')' cmd ELSE cmd
+     | WHILE '(' exp ')' cmd
+     | sYSTEM.OUT.PRINTLN '(' exp ')' ;
+     | ID = exp ;
+     | ID '[' exp ']' = exp ;
+exp => exp && rexp
+     | rexp
+rexp => rexp < aexp
+    | rexp == aexp
+    | rexp != aexp
+    | aexp
+aexp => aexp + mexp
+    | aexp - mexp
+    | mexp
+mexp => mexp * sexp
+    | sexp
+sexp => ! sexp
+    | - sexp
+    | TRUE
+    | FALSE
+    | NUM
+    | NULL
+    | NEW INT '[' exp ']'
+    | pexp . LENGTH
+    | ID . LENGTH
+    | pexp '[' exp ']'
+    | ID '[' exp ']'
+    | ID
+pexp => THIS
+    | NEW ID '(' ')'
+    | '(' exp ')'
+    | pexp . ID
+    | ID . ID
+    | pexp . ID '(' exps ')'
+    | pexp . ID '(' ')'
+    | ID . ID '(' exps ')'
+    | ID . ID '(' ')'
+exps => exps, exp
+exps => exp
