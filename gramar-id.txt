@@ -1,5 +1,6 @@
-PROG => MAIN {CLASSE}
-CLASSE2 => CLASSE CLASSE2 | CLASSE
+PROG => MAIN CLASSES
+CLASSES => CLASSES CLASSE
+CLASSES => CLASSE
 MAIN => class id '{' public static void main '(' String '[' ']' id ')'
 '{' CMD '}' '}'
 CLASSE => class id [extends id] '{' VARS METODOS '}'
