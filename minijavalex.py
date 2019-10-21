@@ -14,7 +14,7 @@ reserved = {
     'if': 'IF',
     'else': 'ELSE',
     'while': 'WHILE',
-    'System.out.println': 'PRINTLN',
+    'println': 'PRINTLN', #System.out.
     'length': 'LENGTH',
     'true': 'TRUE',
     'false': 'FALSE',
@@ -51,10 +51,16 @@ tokens = [
     'NOT'
 ] + list(reserved.values())
 
+
+def t_ID(t):
+    r'[a-zA-Z][a-zA-Z0-9_]*'
+    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
+    return t
+
 t_ignore_MULTICOMMENT = r'(\/\*[^\n]*\*\/)'
 t_ignore_COMMENT = r'\/\/.*'
 t_ignore_WS = r'[ \n\t\r\f]'
-t_ID = r'[a-zA-Z][a-zA-Z0-9_]*'
+#t_ID = r'[a-zA-Z][a-zA-Z0-9_]*'
 t_NUMBER = r'[0-9]+'
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
@@ -82,12 +88,6 @@ t_NOT = r'!'
 #def t_NUMBER(t):
 #    r'[0-9]+'
 #    t.value = int(t.value)
-#    return t
-#
-#
-#def t_ID(t):
-#    r'[a-zA-Z][a-zA-Z0-9_]*'
-#    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
 #    return t
 #
 #
