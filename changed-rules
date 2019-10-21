@@ -1,67 +1,67 @@
 prog => main classes
 classes => classes classe
 classes => classe
-main => CLASS ID '{' PUBLIC STATIC VOID MAIN '(' sTRING '[' ']' ID ')'
-'{' cmd '}' '}'
-classe => CLASS ID EXTENDS ID '{' vars metodos '}'
-classe => CLASS ID '{' vars metodos '}'
+main => CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPARENS STRING LBRACKET RBRACKET ID RPARENS
+LCURLY cmd RCURLY RCURLY
+classe => CLASS ID EXTENDS ID LCURLY vars metodos RCURLY
+classe => CLASS ID LCURLY vars metodos RCURLY
 vars => var
 vars=> vars var
-var => tipo ID ;
-var => ID ID ;
+var => tipo ID SEMICOLON
+var => ID ID SEMICOLON
 metodos => metodo
 metodos => metodos metodo
-metodo => PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ; '}'
-metodo => PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ; '}'
-metodo => PUBLIC ID ID '(' params ')' '{' vars cmds RETURN exp ; '}'
-metodo => PUBLIC ID ID '(' ')' '{' vars cmds RETURN exp ; '}'
+metodo => PUBLIC tipo ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
+metodo => PUBLIC tipo ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
+metodo => PUBLIC ID ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
+metodo => PUBLIC ID ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
 params => tipo ID
-params => params, tipo ID
+params => params COMMA tipo ID
 params => ID ID 
-params => params, ID ID 
-tipo => INT '[' ']'
+params => params COMMA ID ID 
+tipo => INT LBRACKET RBRACKET
     | BOOLEAN
     | INT
 cmds => cmd
 cmds => cmds cmd
-cmd => '{' {cmd} '}'
-     | IF '(' exp ')' cmd
-     | IF '(' exp ')' cmd ELSE cmd
-     | WHILE '(' exp ')' cmd
-     | sYSTEM.OUT.PRINTLN '(' exp ')' ;
-     | ID = exp ;
-     | ID '[' exp ']' = exp ;
-exp => exp && rexp
+cmd => LCURLY cmds RCURLY
+     | IF LPARENS exp RPARENS cmd
+     | IF LPARENS exp RPARENS cmd ELSE cmd
+     | WHILE LPARENS exp RPARENS cmd
+     | PRINTLN LPARENS exp RPARENS SEMICOLON
+     | ID ASSIGN exp SEMICOLON
+     | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
+exp => exp AND rexp
      | rexp
-rexp => rexp < aexp
-    | rexp == aexp
-    | rexp != aexp
+rexp => rexp LTHAN aexp
+    | rexp  EQUALS aexp
+    | rexp DIFFERENT aexp
     | aexp
-aexp => aexp + mexp
-    | aexp - mexp
+aexp => aexp PLUS mexp
+    | aexp MINUS mexp
     | mexp
-mexp => mexp * sexp
+mexp => mexp TIMES sexp
     | sexp
-sexp => ! sexp
-    | - sexp
+sexp =>NOT sexp
+    | MINUS sexp
     | TRUE
     | FALSE
     | NUM
     | NULL
-    | NEW INT '[' exp ']'
-    | pexp . LENGTH
-    | ID . LENGTH
-    | pexp '[' exp ']'
-    | ID '[' exp ']'
+    | NEW INT LBRACKET exp RBRACKET
+    | pexp DOT LENGTH
+    | ID DOT LENGTH
+    | pexp LBRACKET exp RBRACKET
+    | ID LBRACKET exp RBRACKET
     | ID
 pexp => THIS
-    | NEW ID '(' ')'
-    | '(' exp ')'
-    | pexp . ID
-    | ID . ID
-    | pexp . ID '(' exps ')'
-    | pexp . ID '(' ')'
-    | ID . ID '(' exps ')'
-    | ID . ID '(' ')'
-exps => exps, exp
+    | NEW ID LPARENS RPARENS
+    | LPARENS exp RPARENS
+    | pexp DOT ID
+    | ID DOT ID
+    | pexp DOT ID LPARENS exps RPARENS
+    | pexp DOT ID LPARENS RPARENS
+    | ID DOT ID LPARENS exps RPARENS
+    | ID DOT ID LPARENS RPARENS
+exps => exps COMMA exp
 exps => exp
