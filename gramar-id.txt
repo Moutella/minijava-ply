@@ -4,6 +4,7 @@ CLASSES => CLASSE
 MAIN => class id '{' public static void main '(' String '[' ']' id ')'
 '{' CMD '}' '}'
 CLASSE => class id [extends id] '{' VARS METODOS '}'
+CLASSE => class id '{' VARS METODOS '}'
 VARS => VAR
 VARS=> VARS VAR
 VAR => TIPO id ;
@@ -11,7 +12,9 @@ VAR => id id ;
 METODOS => METODO
 METODOS => METODOS METODO
 METODO => public TIPO id '(' [PARAMS] ')' '{' VARS CMDS return EXP ; '}'
+METODO => public TIPO id '(' ')' '{' VARS CMDS return EXP ; '}'
 METODO => public id id '(' [PARAMS] ')' '{' VARS CMDS return EXP ; '}'
+METODO => public id id '(' ')' '{' VARS CMDS return EXP ; '}'
 PARAMS => TIPO id
 PARAMS => PARAMS, TIPO id
 PARAMS => id id 
@@ -58,7 +61,9 @@ PEXP => this
     | PEXP . id
     | id . id
     | PEXP . id '(' [EXPS] ')'
+    | PEXP . id '(' ')'
     | id . id '(' [EXPS] ')'
+    | id . id '(' ')'
 
 EXPS => EXPS, EXP
 EXPS => EXP
