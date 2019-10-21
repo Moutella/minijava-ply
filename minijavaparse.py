@@ -17,7 +17,7 @@ start = 'prog'
 
 def p_prog(p):
     'prog : main classes'
-    print("\n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_main(p):
@@ -26,7 +26,7 @@ def p_main(p):
         | ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY
     '''
 
-    print("main \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_classes(p):
@@ -35,7 +35,7 @@ def p_classes(p):
             | classes classe
     '''
 
-    print("classes \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_classe(p):
@@ -44,7 +44,7 @@ def p_classe(p):
             | CLASS ID LCURLY vars metodos RCURLY
             | empty
     '''
-    print("classe \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_vars(p):
@@ -54,7 +54,7 @@ def p_vars(p):
         | empty
     '''
 
-    print("vars \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_var(p):
@@ -62,7 +62,7 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
-    print("var \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_metodos(p):
@@ -70,7 +70,7 @@ def p_metodos(p):
     metodos : metodo
             | metodos metodo
     '''
-    print("metodos \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_metodo(p):
@@ -82,7 +82,7 @@ def p_metodo(p):
             | empty
     '''
 
-    print("metodo \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_params(p):
@@ -93,7 +93,7 @@ def p_params(p):
     | params COMMA ID ID
     '''
 
-    print("params \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_tipo(p):
@@ -103,7 +103,7 @@ def p_tipo(p):
         | INT
     '''
 
-    print("tipo \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_cmds(p):
@@ -112,7 +112,7 @@ def p_cmds(p):
         | cmds cmd
     '''
 
-    print("cmds \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_cmd(p):
@@ -127,7 +127,7 @@ def p_cmd(p):
         | empty
     '''
 
-    print("cmd \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_exp(p):
@@ -136,7 +136,7 @@ def p_exp(p):
     | rexp
     '''
 
-    print("exp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_rexp(p):
@@ -146,7 +146,7 @@ def p_rexp(p):
         | rexp DIFFERENT aexp
         | aexp
     '''
-    print("rexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_aexp(p):
@@ -156,7 +156,7 @@ def p_aexp(p):
         | mexp
     '''
 
-    print("aexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_mexp(p):
@@ -165,7 +165,7 @@ def p_mexp(p):
         | sexp
     '''
 
-    print("mexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_sexp(p):
@@ -184,7 +184,7 @@ def p_sexp(p):
         | ID
         | pexp
     '''
-    print("sexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_pexp(p):
@@ -199,7 +199,7 @@ def p_pexp(p):
         | ID DOT ID LPAREN exps RPAREN
         | ID DOT ID LPAREN RPAREN
     '''
-    print("pexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
+
 
 
 def p_exps(p):
@@ -208,11 +208,11 @@ def p_exps(p):
         | exps COMMA exp
     '''
 
-    print("exps\n Stack \n {} \n Slice \n{}".format(p.stack, p.slice))
+
 
 
 def p_error(p):
-    print("Syntax error in input! {}".format(p))
+    print("error in input {}".format(p))
 
 def p_empty(p):
     'empty :'
@@ -229,8 +229,7 @@ for line in code:
 try:
     s = codetxt
 except EOFError:
-    print('Cabo')
+    print("Deu ruim")
 if not s:
     pass
 result = parser.parse(s, debug=log)
-print(result)
