@@ -1,16 +1,25 @@
 PROG => MAIN {CLASSE}
+CLASSE2 => CLASSE CLASSE2 | CLASSE
 MAIN => class id '{' public static void main '(' String '[' ']' id ')'
 '{' CMD '}' '}'
-CLASSE => class id [extends id] '{' {VAR} {METODO} '}'
+CLASSE => class id [extends id] '{' VARS METODOS '}'
+VARS => VAR
+VARS=> VARS VAR
 VAR => TIPO id ;
 VAR => id id ;
-METODO => public TIPO id '(' [PARAMS] ')' '{' {VAR} {CMD} return EXP ; '}'
-METODO => public id id '(' [PARAMS] ')' '{' {VAR} {CMD} return EXP ; '}'
-PARAMS => TIPO id {, TIPO id}
-PARAMS => id id {, id id}
+METODOS => METODO
+METODOS => METODOS METODO
+METODO => public TIPO id '(' [PARAMS] ')' '{' VARS CMDS return EXP ; '}'
+METODO => public id id '(' [PARAMS] ')' '{' VARS CMDS return EXP ; '}'
+PARAMS => TIPO id
+PARAMS => PARAMS, TIPO id
+PARAMS => id id 
+PARAMS => PARAMS, id id 
 TIPO => int '[' ']'
     | boolean
     | int
+CMDS => CMD
+CMDS => CMDS CMD
 CMD => '{' {CMD} '}'
      | if '(' EXP ')' CMD
      | if '(' EXP ')' CMD else CMD
@@ -49,4 +58,7 @@ PEXP => this
     | id . id
     | PEXP . id '(' [EXPS] ')'
     | id . id '(' [EXPS] ')'
-EXPS => EXP {, EXP}
+
+EXPS => EXPS, EXP
+EXPS => EXP
+
