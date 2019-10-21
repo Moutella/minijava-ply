@@ -42,6 +42,7 @@ def p_classe(p):
     '''
     classe : CLASS ID EXTENDS ID LCURLY vars metodos RCURLY
             | CLASS ID LCURLY vars metodos RCURLY
+            | empty
     '''
     print("classe \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
 
