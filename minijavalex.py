@@ -96,14 +96,14 @@ t_NOT = r'!'
 #    t.lexer.lineno += len(t.value)
 #
 #
-#def t_error(t):
-#    print("Illegal character '%s'" % t.value[0])
-#    t.lexer.skip(1)
-#
-#
+def t_error(t):
+    print("Illegal character '%s'" % t.value[0])
+    t.lexer.skip(1)
+
+
 lexer = lex.lex()
 
-sourcefile = open('example.minijava', "r")
+sourcefile = open('minijava-ply/example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:

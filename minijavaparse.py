@@ -1,6 +1,14 @@
 import sys
 from minijavalex import tokens
 import ply.yacc as yacc
+import logging
+logging.basicConfig(
+    level = logging.DEBUG,
+    filename = "parselog.txt",
+    filemode = "w",
+    format = "%(filename)10s:%(lineno)4d:%(message)s"
+)
+log = logging.getLogger()
 if sys.version_info[0] >= 3:
     raw_input = input
 
@@ -125,7 +133,6 @@ def p_exp(p):
     '''
     exp : exp AND rexp
     | rexp
-    | empty
     '''
 
     print("exp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
@@ -174,6 +181,7 @@ def p_sexp(p):
         | pexp LBRACKET exp RBRACKET
         | ID LBRACKET exp RBRACKET
         | ID
+        | pexp
     '''
     print("sexp \n Stack \n {} \n Slice \n  {}".format(p.stack, p.slice))
 
@@ -205,14 +213,13 @@ def p_exps(p):
 def p_error(p):
     print("Syntax error in input! {}".format(p))
 
-
 def p_empty(p):
     'empty :'
     pass
 
 
-parser = yacc.yacc(debug=True, method='SLR')
-sourcefile = open('example.minijava', "r")
+parser = yacc.yacc(debug=True, method='SLR', debuglog=log, errorlog=log)
+sourcefile = open('minijava-ply/example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:
@@ -224,5 +231,5 @@ except EOFError:
     print('Cabo')
 if not s:
     pass
-result = parser.parse(s)
+result = parser.parse(s, debug=log)
 print(result)
