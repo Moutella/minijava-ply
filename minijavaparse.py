@@ -122,6 +122,10 @@ def p_params(p):
     | ID ID
     | params COMMA ID ID
     '''
+    if len(p) == 3:
+        p[0] = ('params', p[1], p[2])
+    else:
+        p[0] = ('params', p[1], p[2], p[3], p[4], p[5])
 
 
 def p_tipo(p):
@@ -131,17 +135,26 @@ def p_tipo(p):
         | INT
     '''
 
+    if len(p) == 4:
+        p[0] = ('tipo', p[1], p[2], p[3])
+    else:
+        p[0] = ('tipo', p[1])
+
 
 def p_cmds(p):
     '''
     cmds : cmd
         | cmds cmd
     '''
+    if len(p) == 2:
+        p[0] = ('cmds', p[1])
+    else:
+        p[0] = ('cmds', p[1], p[2])
 
 
 def p_cmd(p):
     '''
-    cmd : LCURLY cmds RCURLY
+    cmd : LCURLY cmds RCURLY    
         | IF LPAREN exp RPAREN cmd
         | IF LPAREN exp RPAREN cmd ELSE cmd
         | WHILE LPAREN exp RPAREN cmd
@@ -150,13 +163,24 @@ def p_cmd(p):
         | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
         | empty
     '''
-
+    if len(p) == 8:
+        p[0] = ('cmd', p[1], p[2], p[3], p[4], p[5], p[6], p[7])
+    elif len(p) == 6:
+        p[0] = ('cmd', p[1], p[2], p[3], p[4], p[5])
+    elif len(p) == 5:
+        p[0] = ('cmd', p[1], p[2], p[3], p[4])
+    else:
+        p[0] = ('cmd')
 
 def p_exp(p):
     '''
     exp : exp AND rexp
     | rexp
     '''
+    if len(p) == 4:
+        p[0] = ('exp', p[1], p[2], p[3])
+    else:
+        p[0] = ('exp', p[1])
 
 
 def p_rexp(p):
@@ -166,7 +190,10 @@ def p_rexp(p):
         | rexp DIFFERENT aexp
         | aexp
     '''
-
+    if len(p) == 4:
+        p[0] = ('rexp', p[1], p[2], p[3])
+    else:
+        p[0] = ('rexp', p[1])
 
 def p_aexp(p):
     '''
@@ -174,6 +201,10 @@ def p_aexp(p):
         | aexp MINUS mexp
         | mexp
     '''
+    if len(p) == 4:
+        p[0] = ('aexp', p[1], p[2], p[3])
+    else:
+        p[0] = ('aexp', p[1])
 
 
 def p_mexp(p):
@@ -181,7 +212,10 @@ def p_mexp(p):
     mexp : mexp TIMES sexp
         | sexp
     '''
-
+    if len(p) == 4:
+        p[0] = ('mexp', p[1], p[2], p[3])
+    else:
+        p[0] = ('mexp', p[1])
 
 def p_sexp(p):
     '''
@@ -199,6 +233,16 @@ def p_sexp(p):
         | ID
         | pexp
     '''
+    if len(p) == 6:
+        p[0] = ('sexp', p[1], p[2], p[3], p[4], p[5])
+    elif len(p) == 5:
+        p[0] = ('sexp', p[1], p[2], p[3], p[4])
+    elif len(p) == 4:
+        p[0] = ('sexp', p[1], p[2], p[3])
+    elif len(p) == 3:
+        p[0] = ('sexp', p[1], p[2])
+    else:
+        p[0] = ('sexp', p[1])
 
 
 def p_pexp(p):
@@ -213,13 +257,32 @@ def p_pexp(p):
         | ID DOT ID LPAREN exps RPAREN
         | ID DOT ID LPAREN RPAREN
     '''
-
-
+    # if len(p) == 6:
+    #     p[0] = ('pexp', p[1], p[2], p[3], p[4], p[5])
+    # elif len(p) == 5:
+    #     p[0] = ('pexp', p[1], p[2], p[3], p[4])
+    # elif len(p) == 4:
+    #     p[0] = ('pexp', p[1], p[2], p[3])
+    # elif len(p) == 3:
+    #     p[0] = ('pexp', p[1], p[2])
+    # else:
+    #     p[0] = ('pexp', p[1])
+    result = ()
+    result += 'pexp',
+    for s in p[1:]:
+        result += (s,)
+    p[0] = result
+    
 def p_exps(p):
     '''
     exps : exp
         | exps COMMA exp
     '''
+    result = ()
+    result += 'exps',
+    for s in p:
+        result += (s,)
+    p[0] = result
 
 
 def p_error(p):
