@@ -3,10 +3,10 @@ from minijavalex import tokens
 import ply.yacc as yacc
 import logging
 logging.basicConfig(
-    level = logging.DEBUG,
-    filename = "parselog.txt",
-    filemode = "w",
-    format = "%(filename)10s:%(lineno)4d:%(message)s"
+    level=logging.DEBUG,
+    filename="parselog.txt",
+    filemode="w",
+    format="%(filename)10s:%(lineno)4d:%(message)s"
 )
 log = logging.getLogger()
 if sys.version_info[0] >= 3:
@@ -15,18 +15,28 @@ if sys.version_info[0] >= 3:
 start = 'prog'
 
 
+class Node:
+    def __init__(self, type, children=None, leaf=None):
+        self.type = type
+        if children:
+            self.children = children
+        else:
+            self.children = []
+        self.leaf = leaf
+
+
 def p_prog(p):
     'prog : main classes'
-
+    p[0] = ('prog', p[1], p[2])
 
 
 def p_main(p):
     '''
     main : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY
-        | ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY
     '''
 
-
+    p[0] = ('main', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
+            p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17])
 
 
 def p_classes(p):
@@ -35,7 +45,11 @@ def p_classes(p):
             | classes classe
     '''
 
-
+    if(len(p) == 3){
+        p[0] = ('classes', p[1], p[2])
+    }else{
+        p[0] = ('classes', p[1])
+    }
 
 
 def p_classe(p):
@@ -44,7 +58,13 @@ def p_classe(p):
             | CLASS ID LCURLY vars metodos RCURLY
             | empty
     '''
-
+    if(len(p) == 8){
+        p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
+    }elif(len(p) == 7){
+        p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7])
+    }else{
+        p[0] = ('classe', p[1])
+    }
 
 
 def p_vars(p):
@@ -53,8 +73,13 @@ def p_vars(p):
         | vars var
         | empty
     '''
-
-
+    if(len(p) == 2){
+        p[0] = ('vars', p[1])
+    }elif(len(p)==3){
+        p[0] = ('vars', p[1], p[2])
+    }else{
+        p[0] = ('vars')
+    }
 
 
 def p_var(p):
@@ -62,15 +87,18 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
-
-
+    p[0] = ('vars',p[1],p[2],p[3])
 
 def p_metodos(p):
     '''
     metodos : metodo
             | metodos metodo
     '''
-
+    if(len(p) == 2){
+        p[0] = ('metodos', p[1])
+    }else{
+        p[0] = ('metodos', p[1], p[2])
+    }
 
 
 def p_metodo(p):
@@ -81,8 +109,10 @@ def p_metodo(p):
             | PUBLIC ID ID LPAREN RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY
             | empty
     '''
-
-
+    if(len(p)==14){
+            p[0] = ('main', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
+            p[9], p[10], p[11], p[12], p[13])
+    }
 
 
 def p_params(p):
@@ -94,8 +124,6 @@ def p_params(p):
     '''
 
 
-
-
 def p_tipo(p):
     '''
     tipo : INT LBRACKET RBRACKET
@@ -104,15 +132,11 @@ def p_tipo(p):
     '''
 
 
-
-
 def p_cmds(p):
     '''
     cmds : cmd
         | cmds cmd
     '''
-
-
 
 
 def p_cmd(p):
@@ -128,15 +152,11 @@ def p_cmd(p):
     '''
 
 
-
-
 def p_exp(p):
     '''
     exp : exp AND rexp
     | rexp
     '''
-
-
 
 
 def p_rexp(p):
@@ -148,7 +168,6 @@ def p_rexp(p):
     '''
 
 
-
 def p_aexp(p):
     '''
     aexp : aexp PLUS mexp
@@ -157,15 +176,11 @@ def p_aexp(p):
     '''
 
 
-
-
 def p_mexp(p):
     '''
     mexp : mexp TIMES sexp
         | sexp
     '''
-
-
 
 
 def p_sexp(p):
@@ -186,7 +201,6 @@ def p_sexp(p):
     '''
 
 
-
 def p_pexp(p):
     '''
     pexp : THIS
@@ -201,7 +215,6 @@ def p_pexp(p):
     '''
 
 
-
 def p_exps(p):
     '''
     exps : exp
@@ -209,10 +222,9 @@ def p_exps(p):
     '''
 
 
-
-
 def p_error(p):
     print("error in input {}".format(p))
+
 
 def p_empty(p):
     'empty :'
@@ -220,7 +232,7 @@ def p_empty(p):
 
 
 parser = yacc.yacc(debug=True, method='SLR', debuglog=log, errorlog=log)
-sourcefile = open('minijava-ply/example.minijava', "r")
+sourcefile = open('example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:
