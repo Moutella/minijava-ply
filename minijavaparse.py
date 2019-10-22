@@ -45,11 +45,11 @@ def p_classes(p):
             | classes classe
     '''
 
-    if(len(p) == 3){
+    if(len(p) == 3):
         p[0] = ('classes', p[1], p[2])
-    }else{
+    else:
         p[0] = ('classes', p[1])
-    }
+    
 
 
 def p_classe(p):
@@ -58,13 +58,13 @@ def p_classe(p):
             | CLASS ID LCURLY vars metodos RCURLY
             | empty
     '''
-    if(len(p) == 8){
+    if(len(p) == 9):
         p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
-    }elif(len(p) == 7){
-        p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7])
-    }else{
+    elif(len(p) == 7):
+        p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6])
+    else:
         p[0] = ('classe', p[1])
-    }
+    
 
 
 def p_vars(p):
@@ -73,13 +73,13 @@ def p_vars(p):
         | vars var
         | empty
     '''
-    if(len(p) == 2){
+    if(len(p) == 2):
         p[0] = ('vars', p[1])
-    }elif(len(p)==3){
+    elif(len(p)==3):
         p[0] = ('vars', p[1], p[2])
-    }else{
+    else:
         p[0] = ('vars')
-    }
+    
 
 
 def p_var(p):
@@ -94,11 +94,11 @@ def p_metodos(p):
     metodos : metodo
             | metodos metodo
     '''
-    if(len(p) == 2){
+    if(len(p) == 2):
         p[0] = ('metodos', p[1])
-    }else{
+    else:
         p[0] = ('metodos', p[1], p[2])
-    }
+    
 
 
 def p_metodo(p):
@@ -109,10 +109,10 @@ def p_metodo(p):
             | PUBLIC ID ID LPAREN RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY
             | empty
     '''
-    if(len(p)==14){
+    if(len(p)==14):
             p[0] = ('main', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p[13])
-    }
+    
 
 
 def p_params(p):
@@ -223,7 +223,7 @@ def p_exps(p):
 
 
 def p_error(p):
-    print("error in input {}".format(p))
+    print("error in input : {}".format(p))
 
 
 def p_empty(p):
@@ -232,7 +232,7 @@ def p_empty(p):
 
 
 parser = yacc.yacc(debug=True, method='SLR', debuglog=log, errorlog=log)
-sourcefile = open('example.minijava', "r")
+sourcefile = open('minijava-ply/example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:
@@ -245,3 +245,4 @@ except EOFError:
 if not s:
     pass
 result = parser.parse(s, debug=log)
+print(result)
