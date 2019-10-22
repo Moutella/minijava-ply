@@ -103,7 +103,7 @@ def t_error(t):
 
 lexer = lex.lex()
 
-sourcefile = open('minijava-ply/example.minijava', "r")
+sourcefile = open('example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:

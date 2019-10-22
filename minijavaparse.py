@@ -287,7 +287,12 @@ def p_exps(p):
 
 def p_error(p):
     print("error in input : {}".format(p))
-
+    if p:
+        print("Syntax error at token", p.type)
+        # Just discard the token and tell the parser it's okay.
+        parser.errok()
+    else:
+        print("Syntax error at EOF")
 
 def p_empty(p):
     'empty :'
@@ -295,7 +300,7 @@ def p_empty(p):
 
 
 parser = yacc.yacc(debug=True, method='SLR', debuglog=log, errorlog=log)
-sourcefile = open('minijava-ply/example.minijava', "r")
+sourcefile = open('example.minijava', "r")
 code = sourcefile.readlines()
 codetxt = ''
 for line in code:
