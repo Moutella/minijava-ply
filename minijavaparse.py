@@ -286,13 +286,11 @@ def p_exps(p):
 
 
 def p_error(p):
-    print("error in input : {}".format(p))
     if p:
-        print("Syntax error at token", p.type)
-        # Just discard the token and tell the parser it's okay.
+        print("Erro de sintace no token: {}".format(p))
         parser.errok()
     else:
-        print("Syntax error at EOF")
+        print("Erro de sintaxe com EOF")
 
 def p_empty(p):
     'empty :'
@@ -309,7 +307,7 @@ for line in code:
 try:
     s = codetxt
 except EOFError:
-    print("Deu ruim")
+    print("Erro EOF")
 if not s:
     pass
 result = parser.parse(s, debug=log)
