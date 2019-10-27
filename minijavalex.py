@@ -14,7 +14,7 @@ reserved = {
     'if': 'IF',
     'else': 'ELSE',
     'while': 'WHILE',
-    'println': 'PRINTLN', #System.out.
+    'System.out.println': 'PRINTLN',
     'length': 'LENGTH',
     'true': 'TRUE',
     'false': 'FALSE',
@@ -53,15 +53,13 @@ tokens = [
 
 
 def t_ID(t):
-    r'[a-zA-Z][a-zA-Z0-9_]*'
-    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
+    r'System.out.println|[a-zA-Z][a-zA-Z0-9_]*'
+    t.type = reserved.get(t.value, 'ID')
     return t
 
 t_ignore_MULTICOMMENT = r'(\/\*[^\n]*\*\/)'
 t_ignore_COMMENT = r'\/\/.*'
 t_ignore_WS = r'[ \n\t\r\f]'
-#t_ID = r'[a-zA-Z][a-zA-Z0-9_]*'
-t_NUMBER = r'[0-9]+'
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_LBRACKET = r'\['
@@ -84,18 +82,16 @@ t_TIMES = r'\*'
 t_AND = r'&&'
 t_NOT = r'!'
 
-#
-#def t_NUMBER(t):
-#    r'[0-9]+'
-#    t.value = int(t.value)
-#    return t
-#
-#
-#def t_newline(t):
-#    r'\n+'
-#    t.lexer.lineno += len(t.value)
-#
-#
+def t_NUMBER(t):
+    r'[0-9]+'
+    t.value = int(t.value)
+    return t
+
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+
+
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
@@ -114,5 +110,5 @@ lexer.input(codetxt)
 while True:
     tok = lexer.token()
     if not tok:
-        break      # No more input
+        break
     print(tok)

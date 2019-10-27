@@ -257,16 +257,6 @@ def p_pexp(p):
         | ID DOT ID LPAREN exps RPAREN
         | ID DOT ID LPAREN RPAREN
     '''
-    # if len(p) == 6:
-    #     p[0] = ('pexp', p[1], p[2], p[3], p[4], p[5])
-    # elif len(p) == 5:
-    #     p[0] = ('pexp', p[1], p[2], p[3], p[4])
-    # elif len(p) == 4:
-    #     p[0] = ('pexp', p[1], p[2], p[3])
-    # elif len(p) == 3:
-    #     p[0] = ('pexp', p[1], p[2])
-    # else:
-    #     p[0] = ('pexp', p[1])
     result = ()
     result += 'pexp',
     for s in p[1:]:
