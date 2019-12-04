@@ -83,7 +83,7 @@
    yacc.py: 411:State  : 181
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN NEW ID LPAREN RPAREN . LexToken(DOT,'.',19,90)
    yacc.py: 471:Action : Reduce rule [pexp -> NEW ID LPAREN RPAREN] with ['new','Fac','(',')'] and goto state 114
-   yacc.py: 506:Result : <tuple @ 0x7f4640df5bf8> (('pexp', 'new', 'Fac', '(', ')'))
+   yacc.py: 506:Result : <tuple @ 0x7f0814d58b48> (('pexp', 'new', 'Fac', '(', ')'))
    yacc.py: 410:
    yacc.py: 411:State  : 114
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp . LexToken(DOT,'.',19,90)
@@ -104,32 +104,32 @@
    yacc.py: 411:State  : 111
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN NUMBER . LexToken(RPAREN,')',19,104)
    yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [10] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95308> (('sexp', 10))
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8748> (('sexp', 10))
    yacc.py: 410:
    yacc.py: 411:State  : 107
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN sexp . LexToken(RPAREN,')',19,104)
    yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 10)] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95188> (('mexp', ('sexp', 10)))
+   yacc.py: 506:Result : <tuple @ 0x7f08149e85c8> (('mexp', ('sexp', 10)))
    yacc.py: 410:
    yacc.py: 411:State  : 105
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN mexp . LexToken(RPAREN,')',19,104)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95188>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95cc8> (('aexp', ('mexp', ('sexp', 10))))
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149e85c8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f0814989148> (('aexp', ('mexp', ('sexp', 10))))
    yacc.py: 410:
    yacc.py: 411:State  : 104
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN aexp . LexToken(RPAREN,')',19,104)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95cc8>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95d08> (('rexp', ('aexp', ('mexp', ('sexp', 10)) ...)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f0814989148>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f0814989188> (('rexp', ('aexp', ('mexp', ('sexp', 10)) ...)
    yacc.py: 410:
    yacc.py: 411:State  : 103
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN rexp . LexToken(RPAREN,')',19,104)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a95d08>] and goto state 189
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95d48> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f0814989188>] and goto state 189
+   yacc.py: 506:Result : <tuple @ 0x7f08149891c8> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
    yacc.py: 410:
    yacc.py: 411:State  : 189
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN exp . LexToken(RPAREN,')',19,104)
-   yacc.py: 471:Action : Reduce rule [exps -> exp] with [<tuple @ 0x7f4640a95d48>] and goto state 191
-   yacc.py: 506:Result : <tuple @ 0x7f4640ab0510> (('exps', None, ('exp', ('rexp', ('aexp', ...)
+   yacc.py: 471:Action : Reduce rule [exps -> exp] with [<tuple @ 0x7f08149891c8>] and goto state 191
+   yacc.py: 506:Result : <tuple @ 0x7f0814989208> (('exps', ('exp', ('rexp', ('aexp', ('mex ...)
    yacc.py: 410:
    yacc.py: 411:State  : 191
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN exps . LexToken(RPAREN,')',19,104)
@@ -137,33 +137,33 @@
    yacc.py: 410:
    yacc.py: 411:State  : 197
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp DOT ID LPAREN exps RPAREN . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [pexp -> pexp DOT ID LPAREN exps RPAREN] with [<tuple @ 0x7f4640df5bf8>,'.','ComputeFac','(',<tuple @ 0x7f4640ab0510>,')'] and goto state 114
-   yacc.py: 506:Result : <tuple @ 0x7f4640aab388> (('pexp', ('pexp', 'new', 'Fac', '(', ')' ...)
+   yacc.py: 471:Action : Reduce rule [pexp -> pexp DOT ID LPAREN exps RPAREN] with [<tuple @ 0x7f0814d58b48>,'.','ComputeFac','(',<tuple @ 0x7f0814989208>,')'] and goto state 114
+   yacc.py: 506:Result : <tuple @ 0x7f0814c63458> (('pexp', ('pexp', 'new', 'Fac', '(', ')' ...)
    yacc.py: 410:
    yacc.py: 411:State  : 114
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN pexp . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f4640aab388>] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95d88> (('sexp', ('pexp', ('pexp', 'new', 'Fac', ...)
+   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f0814c63458>] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f0814989248> (('sexp', ('pexp', ('pexp', 'new', 'Fac', ...)
    yacc.py: 410:
    yacc.py: 411:State  : 107
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN sexp . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f4640a95d88>] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95dc8> (('mexp', ('sexp', ('pexp', ('pexp', 'new ...)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f0814989248>] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814989288> (('mexp', ('sexp', ('pexp', ('pexp', 'new ...)
    yacc.py: 410:
    yacc.py: 411:State  : 105
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN mexp . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95dc8>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95e08> (('aexp', ('mexp', ('sexp', ('pexp', ('pe ...)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f0814989288>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f08149892c8> (('aexp', ('mexp', ('sexp', ('pexp', ('pe ...)
    yacc.py: 410:
    yacc.py: 411:State  : 104
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN aexp . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95e08>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95e48> (('rexp', ('aexp', ('mexp', ('sexp', ('pe ...)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f08149892c8>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f0814989308> (('rexp', ('aexp', ('mexp', ('sexp', ('pe ...)
    yacc.py: 410:
    yacc.py: 411:State  : 103
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN rexp . LexToken(RPAREN,')',19,105)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a95e48>] and goto state 122
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95e88> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f0814989308>] and goto state 122
+   yacc.py: 506:Result : <tuple @ 0x7f08149893c8> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
    yacc.py: 410:
    yacc.py: 411:State  : 122
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN exp . LexToken(RPAREN,')',19,105)
@@ -175,8 +175,8 @@
    yacc.py: 410:
    yacc.py: 411:State  : 173
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY PRINTLN LPAREN exp RPAREN SEMICOLON . LexToken(RCURLY,'}',20,112)
-   yacc.py: 471:Action : Reduce rule [cmd -> PRINTLN LPAREN exp RPAREN SEMICOLON] with [<str @ 0x7f4640a3a4f8>,'(',<tuple @ 0x7f4640a95e88>,')',';'] and goto state 125
-   yacc.py: 506:Result : <tuple @ 0x7f4640a27348> (('cmd', 'System.out.println', '(', ('exp ...)
+   yacc.py: 471:Action : Reduce rule [cmd -> PRINTLN LPAREN exp RPAREN SEMICOLON] with [<str @ 0x7f08149a04f8>,'(',<tuple @ 0x7f08149893c8>,')',';'] and goto state 125
+   yacc.py: 506:Result : <tuple @ 0x7f081498e468> (('cmd', 'System.out.println', '(', ('exp ...)
    yacc.py: 410:
    yacc.py: 411:State  : 125
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd . LexToken(RCURLY,'}',20,112)
@@ -188,8 +188,8 @@
    yacc.py: 410:
    yacc.py: 411:State  : 176
    yacc.py: 435:Stack  : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY . LexToken(CLASS,'class',22,116)
-   yacc.py: 471:Action : Reduce rule [main -> CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY] with ['class','Factorial','{','public','static','void','main','(','String','[',']','a',')','{',<tuple @ 0x7f4640a27348>,'}','}'] and goto state 2
-   yacc.py: 506:Result : <tuple @ 0x7f4640dbac48> (('main', 'class', 'Factorial', '{', 'pub ...)
+   yacc.py: 471:Action : Reduce rule [main -> CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY] with ['class','Factorial','{','public','static','void','main','(','String','[',']','a',')','{',<tuple @ 0x7f081498e468>,'}','}'] and goto state 2
+   yacc.py: 506:Result : <tuple @ 0x7f0814d1ec48> (('main', 'class', 'Factorial', '{', 'pub ...)
    yacc.py: 410:
    yacc.py: 411:State  : 2
    yacc.py: 435:Stack  : main . LexToken(CLASS,'class',22,116)
@@ -211,7 +211,7 @@
    yacc.py: 411:State  : 19
    yacc.py: 435:Stack  : main CLASS ID LCURLY empty . LexToken(PUBLIC,'public',23,129)
    yacc.py: 471:Action : Reduce rule [vars -> empty] with [None] and goto state 17
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95f48> (('vars', None))
+   yacc.py: 506:Result : <tuple @ 0x7f0814989488> (('vars', None))
    yacc.py: 410:
    yacc.py: 411:State  : 17
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars . LexToken(PUBLIC,'public',23,129)
@@ -224,7 +224,7 @@
    yacc.py: 411:State  : 21
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC INT . LexToken(ID,'ComputeFac',23,140)
    yacc.py: 471:Action : Reduce rule [tipo -> INT] with ['int'] and goto state 38
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26048> (('tipo', 'int'))
+   yacc.py: 506:Result : <tuple @ 0x7f0814989548> (('tipo', 'int'))
    yacc.py: 410:
    yacc.py: 411:State  : 38
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo . LexToken(ID,'ComputeFac',23,140)
@@ -241,7 +241,7 @@
    yacc.py: 411:State  : 21
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN INT . LexToken(ID,'num',23,155)
    yacc.py: 471:Action : Reduce rule [tipo -> INT] with ['int'] and goto state 51
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26108> (('tipo', 'int'))
+   yacc.py: 506:Result : <tuple @ 0x7f0814989608> (('tipo', 'int'))
    yacc.py: 410:
    yacc.py: 411:State  : 51
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN tipo . LexToken(ID,'num',23,155)
@@ -250,7 +250,7 @@
    yacc.py: 411:State  : 58
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN tipo ID . LexToken(RPAREN,')',23,158)
    yacc.py: 471:Action : Reduce rule [params -> tipo ID] with [('tipo', 'int'),'num'] and goto state 53
-   yacc.py: 506:Result : <tuple @ 0x7f4640ac6360> (('params', ('tipo', 'int'), 'num'))
+   yacc.py: 506:Result : <tuple @ 0x7f0814a14558> (('params', ('tipo', 'int'), 'num'))
    yacc.py: 410:
    yacc.py: 411:State  : 53
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params . LexToken(RPAREN,')',23,158)
@@ -267,7 +267,7 @@
    yacc.py: 411:State  : 21
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY INT . LexToken(ID,'num_aux',24,169)
    yacc.py: 471:Action : Reduce rule [tipo -> INT] with ['int'] and goto state 20
-   yacc.py: 506:Result : <tuple @ 0x7f4640a261c8> (('tipo', 'int'))
+   yacc.py: 506:Result : <tuple @ 0x7f08149896c8> (('tipo', 'int'))
    yacc.py: 410:
    yacc.py: 411:State  : 20
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY tipo . LexToken(ID,'num_aux',24,169)
@@ -278,473 +278,505 @@
    yacc.py: 445:Action : Shift and goto state 40
    yacc.py: 410:
    yacc.py: 411:State  : 40
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY tipo ID SEMICOLON . LexToken(IF,'if',25,182)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY tipo ID SEMICOLON . LexToken(ID,'num_aux',25,182)
    yacc.py: 471:Action : Reduce rule [var -> tipo ID SEMICOLON] with [('tipo', 'int'),'num_aux',';'] and goto state 18
-   yacc.py: 506:Result : <tuple @ 0x7f4642b8dea8> (('vars', ('tipo', 'int'), 'num_aux', ';' ...)
+   yacc.py: 506:Result : <tuple @ 0x7f0814d7a598> (('vars', ('tipo', 'int'), 'num_aux', ';' ...)
    yacc.py: 410:
    yacc.py: 411:State  : 18
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY var . LexToken(IF,'if',25,182)
-   yacc.py: 471:Action : Reduce rule [vars -> var] with [<tuple @ 0x7f4642b8dea8>] and goto state 73
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26288> (('vars', ('vars', ('tipo', 'int'), 'num_ ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY var . LexToken(ID,'num_aux',25,182)
+   yacc.py: 471:Action : Reduce rule [vars -> var] with [<tuple @ 0x7f0814d7a598>] and goto state 73
+   yacc.py: 506:Result : <tuple @ 0x7f0814989788> (('vars', ('vars', ('tipo', 'int'), 'num_ ...)
    yacc.py: 410:
    yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars . LexToken(IF,'if',25,182)
-   yacc.py: 445:Action : Shift and goto state 80
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars . LexToken(ID,'num_aux',25,182)
+   yacc.py: 445:Action : Shift and goto state 76
    yacc.py: 410:
-   yacc.py: 411:State  : 80
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF . LexToken(LPAREN,'(',25,185)
-   yacc.py: 445:Action : Shift and goto state 94
-   yacc.py: 410:
-   yacc.py: 411:State  : 94
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN . LexToken(ID,'num',25,186)
-   yacc.py: 445:Action : Shift and goto state 101
-   yacc.py: 410:
-   yacc.py: 411:State  : 101
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN ID . LexToken(LTHAN,'<',25,190)
-   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26348> (('sexp', 'num'))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN sexp . LexToken(LTHAN,'<',25,190)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26408> (('mexp', ('sexp', 'num')))
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN mexp . LexToken(LTHAN,'<',25,190)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a26408>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a264c8> (('aexp', ('mexp', ('sexp', 'num'))))
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN aexp . LexToken(LTHAN,'<',25,190)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a264c8>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26588> (('rexp', ('aexp', ('mexp', ('sexp', 'num ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp . LexToken(LTHAN,'<',25,190)
-   yacc.py: 445:Action : Shift and goto state 131
-   yacc.py: 410:
-   yacc.py: 411:State  : 131
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp LTHAN . LexToken(NUMBER,1,25,192)
-   yacc.py: 445:Action : Shift and goto state 111
-   yacc.py: 410:
-   yacc.py: 411:State  : 111
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp LTHAN NUMBER . LexToken(RPAREN,')',25,193)
-   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26648> (('sexp', 1))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp LTHAN sexp . LexToken(RPAREN,')',25,193)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26708> (('mexp', ('sexp', 1)))
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp LTHAN mexp . LexToken(RPAREN,')',25,193)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a26708>] and goto state 157
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95c48> (('aexp', ('mexp', ('sexp', 1))))
-   yacc.py: 410:
-   yacc.py: 411:State  : 157
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp LTHAN aexp . LexToken(RPAREN,')',25,193)
-   yacc.py: 471:Action : Reduce rule [rexp -> rexp LTHAN aexp] with [<tuple @ 0x7f4640a26588>,'<',<tuple @ 0x7f4640a95c48>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a5c188> (('rexp', ('rexp', ('aexp', ('mexp', ('se ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN rexp . LexToken(RPAREN,')',25,193)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a5c188>] and goto state 120
-   yacc.py: 506:Result : <tuple @ 0x7f4640a267c8> (('exp', ('rexp', ('rexp', ('aexp', ('mex ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 120
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp . LexToken(RPAREN,')',25,193)
-   yacc.py: 445:Action : Shift and goto state 146
-   yacc.py: 410:
-   yacc.py: 411:State  : 146
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN . LexToken(LCURLY,'{',25,194)
-   yacc.py: 445:Action : Shift and goto state 77
-   yacc.py: 410:
-   yacc.py: 411:State  : 77
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY . LexToken(ID,'num_aux',26,204)
-   yacc.py: 445:Action : Shift and goto state 91
-   yacc.py: 410:
-   yacc.py: 411:State  : 91
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID . LexToken(ASSIGN,'=',26,212)
+   yacc.py: 411:State  : 76
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID . LexToken(ASSIGN,'=',25,190)
    yacc.py: 445:Action : Shift and goto state 88
    yacc.py: 410:
    yacc.py: 411:State  : 88
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN . LexToken(NUMBER,1,26,214)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN . LexToken(NUMBER,3,25,192)
    yacc.py: 445:Action : Shift and goto state 111
    yacc.py: 410:
    yacc.py: 411:State  : 111
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN NUMBER . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95c08> (('sexp', 1))
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN NUMBER . LexToken(TIMES,'*',25,194)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [3] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f0814989848> (('sexp', 3))
    yacc.py: 410:
    yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN sexp . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95bc8> (('mexp', ('sexp', 1)))
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN sexp . LexToken(TIMES,'*',25,194)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 3)] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814989908> (('mexp', ('sexp', 3)))
    yacc.py: 410:
    yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN mexp . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95bc8>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b88> (('aexp', ('mexp', ('sexp', 1))))
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN aexp . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95b88>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b48> (('rexp', ('aexp', ('mexp', ('sexp', 1))) ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN rexp . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a95b48>] and goto state 102
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b08> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 102
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN exp . LexToken(SEMICOLON,';',26,215)
-   yacc.py: 445:Action : Shift and goto state 129
-   yacc.py: 410:
-   yacc.py: 411:State  : 129
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY ID ASSIGN exp SEMICOLON . LexToken(PRINTLN,'System.out.println',27,225)
-   yacc.py: 471:Action : Reduce rule [cmd -> ID ASSIGN exp SEMICOLON] with ['num_aux','=',<tuple @ 0x7f4640a95b08>,';'] and goto state 79
-   yacc.py: 506:Result : <tuple @ 0x7f4640abefc0> (('cmd', 'num_aux', '=', ('exp', ('rexp', ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 79
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmd . LexToken(PRINTLN,'System.out.println',27,225)
-   yacc.py: 471:Action : Reduce rule [cmds -> cmd] with [<tuple @ 0x7f4640abefc0>] and goto state 90
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95ac8> (('cmds', ('cmd', 'num_aux', '=', ('exp', ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 90
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds . LexToken(PRINTLN,'System.out.println',27,225)
-   yacc.py: 445:Action : Shift and goto state 82
-   yacc.py: 410:
-   yacc.py: 411:State  : 82
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN . LexToken(LPAREN,'(',27,243)
-   yacc.py: 445:Action : Shift and goto state 96
-   yacc.py: 410:
-   yacc.py: 411:State  : 96
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN . LexToken(ID,'c',27,244)
-   yacc.py: 445:Action : Shift and goto state 101
-   yacc.py: 410:
-   yacc.py: 411:State  : 101
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN ID . LexToken(RPAREN,')',27,245)
-   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['c'] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a88> (('sexp', 'c'))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN sexp . LexToken(RPAREN,')',27,245)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'c')] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a48> (('mexp', ('sexp', 'c')))
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN mexp . LexToken(RPAREN,')',27,245)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95a48>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a08> (('aexp', ('mexp', ('sexp', 'c'))))
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN aexp . LexToken(RPAREN,')',27,245)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95a08>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a959c8> (('rexp', ('aexp', ('mexp', ('sexp', 'c') ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN rexp . LexToken(RPAREN,')',27,245)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a959c8>] and goto state 122
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95988> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 122
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN exp . LexToken(RPAREN,')',27,245)
-   yacc.py: 445:Action : Shift and goto state 148
-   yacc.py: 410:
-   yacc.py: 411:State  : 148
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN exp RPAREN . LexToken(SEMICOLON,';',27,246)
-   yacc.py: 445:Action : Shift and goto state 173
-   yacc.py: 410:
-   yacc.py: 411:State  : 173
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds PRINTLN LPAREN exp RPAREN SEMICOLON . LexToken(RCURLY,'}',28,252)
-   yacc.py: 471:Action : Reduce rule [cmd -> PRINTLN LPAREN exp RPAREN SEMICOLON] with [<str @ 0x7f4640a3a930>,'(',<tuple @ 0x7f4640a95988>,')',';'] and goto state 93
-   yacc.py: 506:Result : <tuple @ 0x7f4640a273a8> (('cmd', 'System.out.println', '(', ('exp ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 93
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds cmd . LexToken(RCURLY,'}',28,252)
-   yacc.py: 471:Action : Reduce rule [cmds -> cmds cmd] with [<tuple @ 0x7f4640a95ac8>,<tuple @ 0x7f4640a273a8>] and goto state 90
-   yacc.py: 506:Result : <tuple @ 0x7f4640a795e8> (('cmds', ('cmds', ('cmd', 'num_aux', '=' ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 90
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds . LexToken(RCURLY,'}',28,252)
-   yacc.py: 445:Action : Shift and goto state 118
-   yacc.py: 410:
-   yacc.py: 411:State  : 118
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN LCURLY cmds RCURLY . LexToken(ELSE,'else',29,258)
-   yacc.py: 471:Action : Reduce rule [cmd -> LCURLY cmds RCURLY] with ['{',<tuple @ 0x7f4640a795e8>,'}'] and goto state 171
-   yacc.py: 506:Result : <str @ 0x7f4642b480d8> ('cmd')
-   yacc.py: 410:
-   yacc.py: 411:State  : 171
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd . LexToken(ELSE,'else',29,258)
-   yacc.py: 445:Action : Shift and goto state 185
-   yacc.py: 410:
-   yacc.py: 411:State  : 185
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE . LexToken(ID,'num_aux',30,271)
-   yacc.py: 445:Action : Shift and goto state 91
-   yacc.py: 410:
-   yacc.py: 411:State  : 91
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID . LexToken(ASSIGN,'=',30,279)
-   yacc.py: 445:Action : Shift and goto state 88
-   yacc.py: 410:
-   yacc.py: 411:State  : 88
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN . LexToken(ID,'num',30,281)
-   yacc.py: 445:Action : Shift and goto state 101
-   yacc.py: 410:
-   yacc.py: 411:State  : 101
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN ID . LexToken(TIMES,'*',30,285)
-   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95ac8> (('sexp', 'num'))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN sexp . LexToken(TIMES,'*',30,285)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b08> (('mexp', ('sexp', 'num')))
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp . LexToken(TIMES,'*',30,285)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp . LexToken(TIMES,'*',25,194)
    yacc.py: 445:Action : Shift and goto state 136
    yacc.py: 410:
    yacc.py: 411:State  : 136
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES . LexToken(LPAREN,'(',30,287)
-   yacc.py: 445:Action : Shift and goto state 116
-   yacc.py: 410:
-   yacc.py: 411:State  : 116
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN . LexToken(THIS,'this',30,288)
-   yacc.py: 445:Action : Shift and goto state 115
-   yacc.py: 410:
-   yacc.py: 411:State  : 115
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN THIS . LexToken(DOT,'.',30,292)
-   yacc.py: 471:Action : Reduce rule [pexp -> THIS] with ['this'] and goto state 114
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b48> (('pexp', 'this'))
-   yacc.py: 410:
-   yacc.py: 411:State  : 114
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp . LexToken(DOT,'.',30,292)
-   yacc.py: 445:Action : Shift and goto state 141
-   yacc.py: 410:
-   yacc.py: 411:State  : 141
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT . LexToken(ID,'ComputeFac',30,293)
-   yacc.py: 445:Action : Shift and goto state 166
-   yacc.py: 410:
-   yacc.py: 411:State  : 166
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID . LexToken(LPAREN,'(',30,303)
-   yacc.py: 445:Action : Shift and goto state 182
-   yacc.py: 410:
-   yacc.py: 411:State  : 182
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN . LexToken(ID,'num',30,304)
-   yacc.py: 445:Action : Shift and goto state 101
-   yacc.py: 410:
-   yacc.py: 411:State  : 101
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN ID . LexToken(MINUS,'-',30,307)
-   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95b88> (('sexp', 'num'))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN sexp . LexToken(MINUS,'-',30,307)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95bc8> (('mexp', ('sexp', 'num')))
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN mexp . LexToken(MINUS,'-',30,307)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95bc8>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95c08> (('aexp', ('mexp', ('sexp', 'num'))))
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp . LexToken(MINUS,'-',30,307)
-   yacc.py: 445:Action : Shift and goto state 135
-   yacc.py: 410:
-   yacc.py: 411:State  : 135
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS . LexToken(NUMBER,1,30,308)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES . LexToken(NUMBER,5,25,196)
    yacc.py: 445:Action : Shift and goto state 111
    yacc.py: 410:
    yacc.py: 411:State  : 111
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS NUMBER . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95988> (('sexp', 1))
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS sexp . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 161
-   yacc.py: 506:Result : <tuple @ 0x7f4640a959c8> (('mexp', ('sexp', 1)))
-   yacc.py: 410:
-   yacc.py: 411:State  : 161
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS mexp . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [aexp -> aexp MINUS mexp] with [<tuple @ 0x7f4640a95c08>,'-',<tuple @ 0x7f4640a959c8>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a5c598> (('aexp', ('aexp', ('mexp', ('sexp', 'num ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a5c598>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a08> (('rexp', ('aexp', ('aexp', ('mexp', ('se ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN rexp . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a95a08>] and goto state 189
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a48> (('exp', ('rexp', ('aexp', ('aexp', ('mex ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 189
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exp . LexToken(RPAREN,')',30,309)
-   yacc.py: 471:Action : Reduce rule [exps -> exp] with [<tuple @ 0x7f4640a95a48>] and goto state 191
-   yacc.py: 506:Result : <tuple @ 0x7f4640a795e8> (('exps', None, ('exp', ('rexp', ('aexp', ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 191
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exps . LexToken(RPAREN,')',30,309)
-   yacc.py: 445:Action : Shift and goto state 197
-   yacc.py: 410:
-   yacc.py: 411:State  : 197
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exps RPAREN . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [pexp -> pexp DOT ID LPAREN exps RPAREN] with [<tuple @ 0x7f4640a95b48>,'.','ComputeFac','(',<tuple @ 0x7f4640a795e8>,')'] and goto state 114
-   yacc.py: 506:Result : <tuple @ 0x7f4640aab048> (('pexp', ('pexp', 'this'), '.', 'Compute ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 114
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f4640aab048>] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95a88> (('sexp', ('pexp', ('pexp', 'this'), '.', ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN sexp . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f4640a95a88>] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95948> (('mexp', ('sexp', ('pexp', ('pexp', 'thi ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN mexp . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a95948>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95908> (('aexp', ('mexp', ('sexp', ('pexp', ('pe ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN aexp . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95908>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a958c8> (('rexp', ('aexp', ('mexp', ('sexp', ('pe ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN rexp . LexToken(RPAREN,')',30,310)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a958c8>] and goto state 143
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95888> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 143
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN exp . LexToken(RPAREN,')',30,310)
-   yacc.py: 445:Action : Shift and goto state 168
-   yacc.py: 410:
-   yacc.py: 411:State  : 168
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN exp RPAREN . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [pexp -> LPAREN exp RPAREN] with ['(',<tuple @ 0x7f4640a95888>,')'] and goto state 114
-   yacc.py: 506:Result : <tuple @ 0x7f4640a83ef8> (('pexp', '(', ('exp', ('rexp', ('aexp',  ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 114
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES pexp . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f4640a83ef8>] and goto state 162
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95848> (('sexp', ('pexp', '(', ('exp', ('rexp',  ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES NUMBER . LexToken(TIMES,'*',25,198)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [5] and goto state 162
+   yacc.py: 506:Result : <tuple @ 0x7f08149899c8> (('sexp', 5))
    yacc.py: 410:
    yacc.py: 411:State  : 162
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES sexp . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [mexp -> mexp TIMES sexp] with [<tuple @ 0x7f4640a95b08>,'*',<tuple @ 0x7f4640a95848>] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a96048> (('mexp', ('mexp', ('sexp', 'num')), '*', ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES sexp . LexToken(TIMES,'*',25,198)
+   yacc.py: 471:Action : Reduce rule [mexp -> mexp TIMES sexp] with [<tuple @ 0x7f0814989908>,'*',('sexp', 5)] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814a3e318> (('mexp', ('mexp', ('sexp', 3)), '*', ('s ...)
    yacc.py: 410:
    yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a96048>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a95808> (('aexp', ('mexp', ('mexp', ('sexp', 'num ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp . LexToken(TIMES,'*',25,198)
+   yacc.py: 445:Action : Shift and goto state 136
+   yacc.py: 410:
+   yacc.py: 411:State  : 136
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES . LexToken(NUMBER,5,25,200)
+   yacc.py: 445:Action : Shift and goto state 111
+   yacc.py: 410:
+   yacc.py: 411:State  : 111
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES NUMBER . LexToken(SEMICOLON,';',25,201)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [5] and goto state 162
+   yacc.py: 506:Result : <tuple @ 0x7f0814989a88> (('sexp', 5))
+   yacc.py: 410:
+   yacc.py: 411:State  : 162
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp TIMES sexp . LexToken(SEMICOLON,';',25,201)
+   yacc.py: 471:Action : Reduce rule [mexp -> mexp TIMES sexp] with [<tuple @ 0x7f0814a3e318>,'*',('sexp', 5)] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814a3e728> (('mexp', ('mexp', ('mexp', ('sexp', 3)), ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN mexp . LexToken(SEMICOLON,';',25,201)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f0814a3e728>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f0814989b48> (('aexp', ('mexp', ('mexp', ('mexp', ('se ...)
    yacc.py: 410:
    yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN aexp . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a95808>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a5e608> (('rexp', ('aexp', ('mexp', ('mexp', ('se ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN aexp . LexToken(SEMICOLON,';',25,201)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f0814989b48>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149890c8> (('rexp', ('aexp', ('mexp', ('mexp', ('me ...)
    yacc.py: 410:
    yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN rexp . LexToken(SEMICOLON,';',30,311)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a5e608>] and goto state 102
-   yacc.py: 506:Result : <tuple @ 0x7f4640ad6788> (('exp', ('rexp', ('aexp', ('mexp', ('mex ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN rexp . LexToken(SEMICOLON,';',25,201)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f08149890c8>] and goto state 102
+   yacc.py: 506:Result : <tuple @ 0x7f0814989c08> (('exp', ('rexp', ('aexp', ('mexp', ('mex ...)
    yacc.py: 410:
    yacc.py: 411:State  : 102
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN exp . LexToken(SEMICOLON,';',30,311)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN exp . LexToken(SEMICOLON,';',25,201)
    yacc.py: 445:Action : Shift and goto state 129
    yacc.py: 410:
    yacc.py: 411:State  : 129
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE ID ASSIGN exp SEMICOLON . LexToken(RETURN,'return',31,317)
-   yacc.py: 471:Action : Reduce rule [cmd -> ID ASSIGN exp SEMICOLON] with ['num_aux','=',<tuple @ 0x7f4640ad6788>,';'] and goto state 194
-   yacc.py: 506:Result : <tuple @ 0x7f4640abefc0> (('cmd', 'num_aux', '=', ('exp', ('rexp', ...)
-   yacc.py: 410:
-   yacc.py: 411:State  : 194
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars IF LPAREN exp RPAREN cmd ELSE cmd . LexToken(RETURN,'return',31,317)
-   yacc.py: 471:Action : Reduce rule [cmd -> IF LPAREN exp RPAREN cmd ELSE cmd] with ['if','(',<tuple @ 0x7f4640a267c8>,')','cmd','else',<tuple @ 0x7f4640abefc0>] and goto state 79
-   yacc.py: 506:Result : <tuple @ 0x7f4640de0978> (('cmd', 'if', '(', ('exp', ('rexp', ('re ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars ID ASSIGN exp SEMICOLON . LexToken(IF,'if',26,207)
+   yacc.py: 471:Action : Reduce rule [cmd -> ID ASSIGN exp SEMICOLON] with ['num_aux','=',<tuple @ 0x7f0814989c08>,';'] and goto state 79
+   yacc.py: 506:Result : <tuple @ 0x7f0814a22f10> (('cmd', 'num_aux', '=', ('exp', ('rexp', ...)
    yacc.py: 410:
    yacc.py: 411:State  : 79
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmd . LexToken(RETURN,'return',31,317)
-   yacc.py: 471:Action : Reduce rule [cmds -> cmd] with [<tuple @ 0x7f4640de0978>] and goto state 87
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26808> (('cmds', ('cmd', 'if', '(', ('exp', ('re ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmd . LexToken(IF,'if',26,207)
+   yacc.py: 471:Action : Reduce rule [cmds -> cmd] with [<tuple @ 0x7f0814a22f10>] and goto state 87
+   yacc.py: 506:Result : <tuple @ 0x7f0814989088> (('cmds', ('cmd', 'num_aux', '=', ('exp', ...)
    yacc.py: 410:
    yacc.py: 411:State  : 87
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds . LexToken(RETURN,'return',31,317)
-   yacc.py: 445:Action : Shift and goto state 100
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds . LexToken(IF,'if',26,207)
+   yacc.py: 445:Action : Shift and goto state 80
    yacc.py: 410:
-   yacc.py: 411:State  : 100
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN . LexToken(ID,'num_aux',31,324)
+   yacc.py: 411:State  : 80
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF . LexToken(LPAREN,'(',26,210)
+   yacc.py: 445:Action : Shift and goto state 94
+   yacc.py: 410:
+   yacc.py: 411:State  : 94
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN . LexToken(ID,'num',26,211)
    yacc.py: 445:Action : Shift and goto state 101
    yacc.py: 410:
    yacc.py: 411:State  : 101
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN ID . LexToken(SEMICOLON,';',31,332)
-   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num_aux'] and goto state 107
-   yacc.py: 506:Result : <tuple @ 0x7f4640a268c8> (('sexp', 'num_aux'))
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN ID . LexToken(LTHAN,'<',26,215)
+   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f0814989048> (('sexp', 'num'))
    yacc.py: 410:
    yacc.py: 411:State  : 107
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN sexp . LexToken(SEMICOLON,';',31,332)
-   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f4640a268c8>] and goto state 105
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26888> (('mexp', ('sexp', 'num_aux')))
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN sexp . LexToken(LTHAN,'<',26,215)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8fc8> (('mexp', ('sexp', 'num')))
    yacc.py: 410:
    yacc.py: 411:State  : 105
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN mexp . LexToken(SEMICOLON,';',31,332)
-   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f4640a26888>] and goto state 104
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26848> (('aexp', ('mexp', ('sexp', 'num_aux'))))
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN mexp . LexToken(LTHAN,'<',26,215)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149e8fc8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8f88> (('aexp', ('mexp', ('sexp', 'num'))))
    yacc.py: 410:
    yacc.py: 411:State  : 104
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN aexp . LexToken(SEMICOLON,';',31,332)
-   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f4640a26848>] and goto state 103
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26b08> (('rexp', ('aexp', ('mexp', ('sexp', 'num ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN aexp . LexToken(LTHAN,'<',26,215)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f08149e8f88>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8f48> (('rexp', ('aexp', ('mexp', ('sexp', 'num ...)
    yacc.py: 410:
    yacc.py: 411:State  : 103
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN rexp . LexToken(SEMICOLON,';',31,332)
-   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f4640a26b08>] and goto state 126
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26a88> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp . LexToken(LTHAN,'<',26,215)
+   yacc.py: 445:Action : Shift and goto state 131
+   yacc.py: 410:
+   yacc.py: 411:State  : 131
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp LTHAN . LexToken(NUMBER,1,26,217)
+   yacc.py: 445:Action : Shift and goto state 111
+   yacc.py: 410:
+   yacc.py: 411:State  : 111
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp LTHAN NUMBER . LexToken(RPAREN,')',26,218)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8f08> (('sexp', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp LTHAN sexp . LexToken(RPAREN,')',26,218)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8ec8> (('mexp', ('sexp', 1)))
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp LTHAN mexp . LexToken(RPAREN,')',26,218)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149e8ec8>] and goto state 157
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8e88> (('aexp', ('mexp', ('sexp', 1))))
+   yacc.py: 410:
+   yacc.py: 411:State  : 157
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp LTHAN aexp . LexToken(RPAREN,')',26,218)
+   yacc.py: 471:Action : Reduce rule [rexp -> rexp LTHAN aexp] with [<tuple @ 0x7f08149e8f48>,'<',<tuple @ 0x7f08149e8e88>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149fe0e8> (('rexp', ('rexp', ('aexp', ('mexp', ('se ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN rexp . LexToken(RPAREN,')',26,218)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f08149fe0e8>] and goto state 120
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8e48> (('exp', ('rexp', ('rexp', ('aexp', ('mex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 120
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp . LexToken(RPAREN,')',26,218)
+   yacc.py: 445:Action : Shift and goto state 146
+   yacc.py: 410:
+   yacc.py: 411:State  : 146
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN . LexToken(LCURLY,'{',26,219)
+   yacc.py: 445:Action : Shift and goto state 77
+   yacc.py: 410:
+   yacc.py: 411:State  : 77
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY . LexToken(ID,'num_aux',27,229)
+   yacc.py: 445:Action : Shift and goto state 91
+   yacc.py: 410:
+   yacc.py: 411:State  : 91
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID . LexToken(ASSIGN,'=',27,237)
+   yacc.py: 445:Action : Shift and goto state 88
+   yacc.py: 410:
+   yacc.py: 411:State  : 88
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN . LexToken(NUMBER,1,27,239)
+   yacc.py: 445:Action : Shift and goto state 111
+   yacc.py: 410:
+   yacc.py: 411:State  : 111
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN NUMBER . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8e08> (('sexp', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN sexp . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8dc8> (('mexp', ('sexp', 1)))
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN mexp . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149e8dc8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d88> (('aexp', ('mexp', ('sexp', 1))))
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN aexp . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f08149e8d88>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d48> (('rexp', ('aexp', ('mexp', ('sexp', 1))) ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN rexp . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f08149e8d48>] and goto state 102
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d08> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 102
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN exp . LexToken(SEMICOLON,';',27,240)
+   yacc.py: 445:Action : Shift and goto state 129
+   yacc.py: 410:
+   yacc.py: 411:State  : 129
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY ID ASSIGN exp SEMICOLON . LexToken(RCURLY,'}',28,246)
+   yacc.py: 471:Action : Reduce rule [cmd -> ID ASSIGN exp SEMICOLON] with ['num_aux','=',<tuple @ 0x7f08149e8d08>,';'] and goto state 79
+   yacc.py: 506:Result : <tuple @ 0x7f0814a22eb8> (('cmd', 'num_aux', '=', ('exp', ('rexp', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 79
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY cmd . LexToken(RCURLY,'}',28,246)
+   yacc.py: 471:Action : Reduce rule [cmds -> cmd] with [<tuple @ 0x7f0814a22eb8>] and goto state 90
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8cc8> (('cmds', ('cmd', 'num_aux', '=', ('exp', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 90
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY cmds . LexToken(RCURLY,'}',28,246)
+   yacc.py: 445:Action : Shift and goto state 118
+   yacc.py: 410:
+   yacc.py: 411:State  : 118
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN LCURLY cmds RCURLY . LexToken(ELSE,'else',29,252)
+   yacc.py: 471:Action : Reduce rule [cmd -> LCURLY cmds RCURLY] with ['{',<tuple @ 0x7f08149e8cc8>,'}'] and goto state 171
+   yacc.py: 506:Result : <str @ 0x7f0816aab0d8> ('cmd')
+   yacc.py: 410:
+   yacc.py: 411:State  : 171
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd . LexToken(ELSE,'else',29,252)
+   yacc.py: 445:Action : Shift and goto state 185
+   yacc.py: 410:
+   yacc.py: 411:State  : 185
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE . LexToken(ID,'num_aux',30,265)
+   yacc.py: 445:Action : Shift and goto state 91
+   yacc.py: 410:
+   yacc.py: 411:State  : 91
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID . LexToken(ASSIGN,'=',30,273)
+   yacc.py: 445:Action : Shift and goto state 88
+   yacc.py: 410:
+   yacc.py: 411:State  : 88
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN . LexToken(ID,'num',30,275)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN ID . LexToken(TIMES,'*',30,279)
+   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8cc8> (('sexp', 'num'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN sexp . LexToken(TIMES,'*',30,279)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d08> (('mexp', ('sexp', 'num')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp . LexToken(TIMES,'*',30,279)
+   yacc.py: 445:Action : Shift and goto state 136
+   yacc.py: 410:
+   yacc.py: 411:State  : 136
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES . LexToken(LPAREN,'(',30,281)
+   yacc.py: 445:Action : Shift and goto state 116
+   yacc.py: 410:
+   yacc.py: 411:State  : 116
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN . LexToken(THIS,'this',30,282)
+   yacc.py: 445:Action : Shift and goto state 115
+   yacc.py: 410:
+   yacc.py: 411:State  : 115
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN THIS . LexToken(DOT,'.',30,286)
+   yacc.py: 471:Action : Reduce rule [pexp -> THIS] with ['this'] and goto state 114
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d48> (('pexp', 'this'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 114
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp . LexToken(DOT,'.',30,286)
+   yacc.py: 445:Action : Shift and goto state 141
+   yacc.py: 410:
+   yacc.py: 411:State  : 141
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT . LexToken(ID,'ComputeFac',30,287)
+   yacc.py: 445:Action : Shift and goto state 166
+   yacc.py: 410:
+   yacc.py: 411:State  : 166
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID . LexToken(LPAREN,'(',30,297)
+   yacc.py: 445:Action : Shift and goto state 182
+   yacc.py: 410:
+   yacc.py: 411:State  : 182
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN . LexToken(ID,'num',30,298)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN ID . LexToken(MINUS,'-',30,301)
+   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num'] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8d88> (('sexp', 'num'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN sexp . LexToken(MINUS,'-',30,301)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 'num')] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8dc8> (('mexp', ('sexp', 'num')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN mexp . LexToken(MINUS,'-',30,301)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149e8dc8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8e08> (('aexp', ('mexp', ('sexp', 'num'))))
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp . LexToken(MINUS,'-',30,301)
+   yacc.py: 445:Action : Shift and goto state 135
+   yacc.py: 410:
+   yacc.py: 411:State  : 135
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS . LexToken(NUMBER,1,30,302)
+   yacc.py: 445:Action : Shift and goto state 111
+   yacc.py: 410:
+   yacc.py: 411:State  : 111
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS NUMBER . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [sexp -> NUMBER] with [1] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8c88> (('sexp', 1))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS sexp . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [('sexp', 1)] and goto state 161
+   yacc.py: 506:Result : <tuple @ 0x7f08149e8c48> (('mexp', ('sexp', 1)))
+   yacc.py: 410:
+   yacc.py: 411:State  : 161
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp MINUS mexp . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [aexp -> aexp MINUS mexp] with [<tuple @ 0x7f08149e8e08>,'-',<tuple @ 0x7f08149e8c48>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f08149fe1d8> (('aexp', ('aexp', ('mexp', ('sexp', 'num ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN aexp . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f08149fe1d8>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149c0a88> (('rexp', ('aexp', ('aexp', ('mexp', ('se ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN rexp . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f08149c0a88>] and goto state 189
+   yacc.py: 506:Result : <tuple @ 0x7f0814a36c08> (('exp', ('rexp', ('aexp', ('aexp', ('mex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 189
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exp . LexToken(RPAREN,')',30,303)
+   yacc.py: 471:Action : Reduce rule [exps -> exp] with [<tuple @ 0x7f0814a36c08>] and goto state 191
+   yacc.py: 506:Result : <tuple @ 0x7f0814989c48> (('exps', ('exp', ('rexp', ('aexp', ('aex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 191
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exps . LexToken(RPAREN,')',30,303)
+   yacc.py: 445:Action : Shift and goto state 197
+   yacc.py: 410:
+   yacc.py: 411:State  : 197
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp DOT ID LPAREN exps RPAREN . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [pexp -> pexp DOT ID LPAREN exps RPAREN] with [<tuple @ 0x7f08149e8d48>,'.','ComputeFac','(',<tuple @ 0x7f0814989c48>,')'] and goto state 114
+   yacc.py: 506:Result : <tuple @ 0x7f0814c63118> (('pexp', ('pexp', 'this'), '.', 'Compute ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 114
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN pexp . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f0814c63118>] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f0814989d08> (('sexp', ('pexp', ('pexp', 'this'), '.', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN sexp . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f0814989d08>] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814989cc8> (('mexp', ('sexp', ('pexp', ('pexp', 'thi ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN mexp . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f0814989cc8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f0814989c88> (('aexp', ('mexp', ('sexp', ('pexp', ('pe ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN aexp . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f0814989c88>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f0814989d88> (('rexp', ('aexp', ('mexp', ('sexp', ('pe ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN rexp . LexToken(RPAREN,')',30,304)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f0814989d88>] and goto state 143
+   yacc.py: 506:Result : <tuple @ 0x7f0814989d48> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 143
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN exp . LexToken(RPAREN,')',30,304)
+   yacc.py: 445:Action : Shift and goto state 168
+   yacc.py: 410:
+   yacc.py: 411:State  : 168
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES LPAREN exp RPAREN . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [pexp -> LPAREN exp RPAREN] with ['(',<tuple @ 0x7f0814989d48>,')'] and goto state 114
+   yacc.py: 506:Result : <tuple @ 0x7f08149fe228> (('pexp', '(', ('exp', ('rexp', ('aexp',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 114
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES pexp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [sexp -> pexp] with [<tuple @ 0x7f08149fe228>] and goto state 162
+   yacc.py: 506:Result : <tuple @ 0x7f0814989f08> (('sexp', ('pexp', '(', ('exp', ('rexp',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 162
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp TIMES sexp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [mexp -> mexp TIMES sexp] with [<tuple @ 0x7f08149e8d08>,'*',<tuple @ 0x7f0814989f08>] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f08149fe278> (('mexp', ('mexp', ('sexp', 'num')), '*', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN mexp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f08149fe278>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f0814989f48> (('aexp', ('mexp', ('mexp', ('sexp', 'num ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN aexp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f0814989f48>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f0814989fc8> (('rexp', ('aexp', ('mexp', ('mexp', ('se ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN rexp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f0814989fc8>] and goto state 102
+   yacc.py: 506:Result : <tuple @ 0x7f0814989e88> (('exp', ('rexp', ('aexp', ('mexp', ('mex ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 102
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN exp . LexToken(SEMICOLON,';',30,305)
+   yacc.py: 445:Action : Shift and goto state 129
+   yacc.py: 410:
+   yacc.py: 411:State  : 129
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE ID ASSIGN exp SEMICOLON . LexToken(RETURN,'return',31,311)
+   yacc.py: 471:Action : Reduce rule [cmd -> ID ASSIGN exp SEMICOLON] with ['num_aux','=',<tuple @ 0x7f0814989e88>,';'] and goto state 194
+   yacc.py: 506:Result : <tuple @ 0x7f0814a22eb8> (('cmd', 'num_aux', '=', ('exp', ('rexp', ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 194
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds IF LPAREN exp RPAREN cmd ELSE cmd . LexToken(RETURN,'return',31,311)
+   yacc.py: 471:Action : Reduce rule [cmd -> IF LPAREN exp RPAREN cmd ELSE cmd] with ['if','(',<tuple @ 0x7f08149e8e48>,')','cmd','else',<tuple @ 0x7f0814a22eb8>] and goto state 93
+   yacc.py: 506:Result : <tuple @ 0x7f0814d45978> (('cmd', 'if', '(', ('exp', ('rexp', ('re ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 93
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds cmd . LexToken(RETURN,'return',31,311)
+   yacc.py: 471:Action : Reduce rule [cmds -> cmds cmd] with [<tuple @ 0x7f0814989088>,<tuple @ 0x7f0814d45978>] and goto state 87
+   yacc.py: 506:Result : <tuple @ 0x7f0814a2b3a8> (('cmds', ('cmds', ('cmd', 'num_aux', '=' ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 87
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds . LexToken(RETURN,'return',31,311)
+   yacc.py: 445:Action : Shift and goto state 100
+   yacc.py: 410:
+   yacc.py: 411:State  : 100
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN . LexToken(ID,'num_aux',31,318)
+   yacc.py: 445:Action : Shift and goto state 101
+   yacc.py: 410:
+   yacc.py: 411:State  : 101
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN ID . LexToken(SEMICOLON,';',31,326)
+   yacc.py: 471:Action : Reduce rule [sexp -> ID] with ['num_aux'] and goto state 107
+   yacc.py: 506:Result : <tuple @ 0x7f0814989f88> (('sexp', 'num_aux'))
+   yacc.py: 410:
+   yacc.py: 411:State  : 107
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN sexp . LexToken(SEMICOLON,';',31,326)
+   yacc.py: 471:Action : Reduce rule [mexp -> sexp] with [<tuple @ 0x7f0814989f88>] and goto state 105
+   yacc.py: 506:Result : <tuple @ 0x7f0814989dc8> (('mexp', ('sexp', 'num_aux')))
+   yacc.py: 410:
+   yacc.py: 411:State  : 105
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN mexp . LexToken(SEMICOLON,';',31,326)
+   yacc.py: 471:Action : Reduce rule [aexp -> mexp] with [<tuple @ 0x7f0814989dc8>] and goto state 104
+   yacc.py: 506:Result : <tuple @ 0x7f0814989e48> (('aexp', ('mexp', ('sexp', 'num_aux'))))
+   yacc.py: 410:
+   yacc.py: 411:State  : 104
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN aexp . LexToken(SEMICOLON,';',31,326)
+   yacc.py: 471:Action : Reduce rule [rexp -> aexp] with [<tuple @ 0x7f0814989e48>] and goto state 103
+   yacc.py: 506:Result : <tuple @ 0x7f08149a8108> (('rexp', ('aexp', ('mexp', ('sexp', 'num ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 103
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN rexp . LexToken(SEMICOLON,';',31,326)
+   yacc.py: 471:Action : Reduce rule [exp -> rexp] with [<tuple @ 0x7f08149a8108>] and goto state 126
+   yacc.py: 506:Result : <tuple @ 0x7f08149a8048> (('exp', ('rexp', ('aexp', ('mexp', ('sex ...)
    yacc.py: 410:
    yacc.py: 411:State  : 126
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp . LexToken(SEMICOLON,';',31,332)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp . LexToken(SEMICOLON,';',31,326)
    yacc.py: 445:Action : Shift and goto state 152
    yacc.py: 410:
    yacc.py: 411:State  : 152
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON . LexToken(RCURLY,'}',32,338)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON . LexToken(RCURLY,'}',32,332)
    yacc.py: 445:Action : Shift and goto state 177
    yacc.py: 410:
    yacc.py: 411:State  : 177
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY . LexToken(RCURLY,'}',33,340)
-   yacc.py: 471:Action : Reduce rule [metodo -> PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY] with ['public',('tipo', 'int'),'ComputeFac','(',<tuple @ 0x7f4640ac6360>,')','{',<tuple @ 0x7f4640a26288>,<tuple @ 0x7f4640a26808>,'return',<tuple @ 0x7f4640a26a88>,';','}'] and goto state 28
-   yacc.py: 506:Result : <tuple @ 0x7f4640d06b88> (('main', 'public', ('tipo', 'int'), 'Com ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY . LexToken(RCURLY,'}',33,334)
+   yacc.py: 471:Action : Reduce rule [metodo -> PUBLIC tipo ID LPAREN params RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY] with ['public',('tipo', 'int'),'ComputeFac','(',<tuple @ 0x7f0814a14558>,')','{',<tuple @ 0x7f0814989788>,<tuple @ 0x7f0814a2b3a8>,'return',<tuple @ 0x7f08149a8048>,';','}'] and goto state 28
+   yacc.py: 506:Result : <tuple @ 0x7f0814c7eb88> (('main', 'public', ('tipo', 'int'), 'Com ...)
    yacc.py: 410:
    yacc.py: 411:State  : 28
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars metodo . LexToken(RCURLY,'}',33,340)
-   yacc.py: 471:Action : Reduce rule [metodos -> metodo] with [<tuple @ 0x7f4640d06b88>] and goto state 26
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26a48> (('metodos', ('main', 'public', ('tipo',  ...)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars metodo . LexToken(RCURLY,'}',33,334)
+   yacc.py: 471:Action : Reduce rule [metodos -> metodo] with [<tuple @ 0x7f0814c7eb88>] and goto state 26
+   yacc.py: 506:Result : <tuple @ 0x7f08149a8088> (('metodos', ('main', 'public', ('tipo',  ...)
    yacc.py: 410:
    yacc.py: 411:State  : 26
-   yacc.py: 435:Stack  : main CLASS ID LCURLY vars metodos . LexToken(RCURLY,'}',33,340)
+   yacc.py: 435:Stack  : main CLASS ID LCURLY vars metodos . LexToken(RCURLY,'}',33,334)
    yacc.py: 445:Action : Shift and goto state 36
    yacc.py: 410:
    yacc.py: 411:State  : 36
    yacc.py: 435:Stack  : main CLASS ID LCURLY vars metodos RCURLY . $end
-   yacc.py: 471:Action : Reduce rule [classe -> CLASS ID LCURLY vars metodos RCURLY] with ['class','Fac','{',('vars', None),<tuple @ 0x7f4640a26a48>,'}'] and goto state 5
-   yacc.py: 506:Result : <tuple @ 0x7f4640acd118> (('classe', 'class', 'Fac', '{', ('vars', ...)
+   yacc.py: 471:Action : Reduce rule [classe -> CLASS ID LCURLY vars metodos RCURLY] with ['class','Fac','{',('vars', None),<tuple @ 0x7f08149a8088>,'}'] and goto state 5
+   yacc.py: 506:Result : <tuple @ 0x7f0814a2f1e8> (('classe', 'class', 'Fac', '{', ('vars', ...)
    yacc.py: 410:
    yacc.py: 411:State  : 5
    yacc.py: 435:Stack  : main classe . $end
-   yacc.py: 471:Action : Reduce rule [classes -> classe] with [<tuple @ 0x7f4640acd118>] and goto state 4
-   yacc.py: 506:Result : <tuple @ 0x7f4640a26948> (('classes', ('classe', 'class', 'Fac', ' ...)
+   yacc.py: 471:Action : Reduce rule [classes -> classe] with [<tuple @ 0x7f0814a2f1e8>] and goto state 4
+   yacc.py: 506:Result : <tuple @ 0x7f08149a80c8> (('classes', ('classe', 'class', 'Fac', ' ...)
    yacc.py: 410:
    yacc.py: 411:State  : 4
    yacc.py: 435:Stack  : main classes . $end
-   yacc.py: 471:Action : Reduce rule [prog -> main classes] with [<tuple @ 0x7f4640dbac48>,<tuple @ 0x7f4640a26948>] and goto state 1
-   yacc.py: 506:Result : <tuple @ 0x7f4640a79f30> (('prog', ('main', 'class', 'Factorial',  ...)
+   yacc.py: 471:Action : Reduce rule [prog -> main classes] with [<tuple @ 0x7f0814d1ec48>,<tuple @ 0x7f08149a80c8>] and goto state 1
+   yacc.py: 506:Result : <tuple @ 0x7f08149df5e8> (('prog', ('main', 'class', 'Factorial',  ...)
    yacc.py: 410:
    yacc.py: 411:State  : 1
    yacc.py: 435:Stack  : prog . $end
-   yacc.py: 571:Done   : Returning <tuple @ 0x7f4640a79f30> (('prog', ('main', 'class', 'Factorial',  ...)
+   yacc.py: 571:Done   : Returning <tuple @ 0x7f08149df5e8> (('prog', ('main', 'class', 'Factorial',  ...)
    yacc.py: 572:PLY: PARSE DEBUG END

@@ -122,7 +122,3 @@ while True:
     tok = lexer.token()
     if not tok:
         break
-    print("TIPO: {} VALOR: {} TOKEN: {}".format(tok.type, tok.value, tok))
-print("\n\n\nTABELA DE SIMBOLOS")
-print(symbols)
-print("\n\n\n")

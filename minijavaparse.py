@@ -69,6 +69,7 @@ def p_vars(p):
         p[0] = ('vars', p[1], p[2])
     else:
         p[0] = ('vars')
+    print(p[0])
     
 
 
@@ -254,6 +255,7 @@ def p_pexp(p):
         result += (s,)
     p[0] = result
     
+    
 def p_exps(p):
     '''
     exps : exp
@@ -261,9 +263,10 @@ def p_exps(p):
     '''
     result = ()
     result += 'exps',
-    for s in p:
+    for s in p[1:]:
         result += (s,)
     p[0] = result
+    
 
 
 def p_error(p):
@@ -292,4 +295,3 @@ except EOFError:
 if not s:
     pass
 result = parser.parse(s, debug=log)
-print(result)
