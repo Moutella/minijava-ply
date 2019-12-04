@@ -15,16 +15,6 @@ if sys.version_info[0] >= 3:
 start = 'prog'
 
 
-class Node:
-    def __init__(self, type, children=None, leaf=None):
-        self.type = type
-        if children:
-            self.children = children
-        else:
-            self.children = []
-        self.leaf = leaf
-
-
 def p_prog(p):
     'prog : main classes'
     p[0] = ('prog', p[1], p[2])
@@ -87,6 +77,7 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
+    p[0]
     p[0] = ('vars',p[1],p[2],p[3])
 
 def p_metodos(p):

@@ -51,10 +51,21 @@ tokens = [
     'NOT'
 ] + list(reserved.values())
 
+symbols = {}
+def symbol_lookup(token):
+    if token in symbols:
+        return symbols[token]
+    return False
 
 def t_ID(t):
     r'System.out.println|[a-zA-Z][a-zA-Z0-9_]*'
     t.type = reserved.get(t.value, 'ID')
+    if t.type == 'ID':
+        value = symbol_lookup(t.value)
+        if value:
+            t.value = value
+        else:
+            symbols[t.value] = {}
     return t
 
 t_ignore_MULTICOMMENT = r'(\/\*[^\n]*\*\/)'
@@ -111,4 +122,5 @@ while True:
     tok = lexer.token()
     if not tok:
         break
-    print(tok)
+    print("TIPO: {} VALOR: {} TOKEN: {}".format(tok.type, tok.value, tok))
+print(symbols)
