@@ -1,5 +1,5 @@
 import sys
-from minijavalex import tokens
+from minijavalex import tokens, symbols, symbol_lookup, symbol_add
 import ply.yacc as yacc
 import logging
 logging.basicConfig(
@@ -77,7 +77,7 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
-    p[0]
+    symbol_add(p[2], {"type": p[1][1]})
     p[0] = ('vars',p[1],p[2],p[3])
 
 def p_metodos(p):
@@ -159,6 +159,13 @@ def p_cmd(p):
     elif len(p) == 6:
         p[0] = ('cmd', p[1], p[2], p[3], p[4], p[5])
     elif len(p) == 5:
+
+        if p[2] == "=":
+            print(p[2])
+            print(p[3])
+            if type(p[3]) == int and p[2] == "=":
+                symbol_add(p[1], {"value": p[3]})
+                print(p[1])
         p[0] = ('cmd', p[1], p[2], p[3], p[4])
     else:
         p[0] = ('cmd')
@@ -171,7 +178,10 @@ def p_exp(p):
     if len(p) == 4:
         p[0] = ('exp', p[1], p[2], p[3])
     else:
-        p[0] = ('exp', p[1])
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('exp', p[1])
 
 
 def p_rexp(p):
@@ -181,10 +191,16 @@ def p_rexp(p):
         | rexp DIFFERENT aexp
         | aexp
     '''
+
+    
     if len(p) == 4:
+        
         p[0] = ('rexp', p[1], p[2], p[3])
     else:
-        p[0] = ('rexp', p[1])
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('rexp', p[1])
 
 def p_aexp(p):
     '''
@@ -193,9 +209,18 @@ def p_aexp(p):
         | mexp
     '''
     if len(p) == 4:
-        p[0] = ('aexp', p[1], p[2], p[3])
+        if type(p[1]) == type(p[3]) == int:
+            if p[2] == "+":
+                p[0] = p[1] + p[3]
+            elif p[2] == "MINUS":
+                P[0] = p[1] + p[3]
+        else:
+            p[0] = ('aexp', p[1], p[2], p[3])
     else:
-        p[0] = ('aexp', p[1])
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('aexp', p[1])
 
 
 def p_mexp(p):
@@ -204,7 +229,10 @@ def p_mexp(p):
         | sexp
     '''
     if len(p) == 4:
-        p[0] = ('mexp', p[1], p[2], p[3])
+        if type(p[1]) == type(p[3]) == int:
+            p[0] = p[1] * p[3]
+        else:
+            p[0] = ('mexp', p[1], p[2], p[3])
     else:
         p[0] = ('mexp', p[1])
 
@@ -224,6 +252,7 @@ def p_sexp(p):
         | ID
         | pexp
     '''
+    
     if len(p) == 6:
         p[0] = ('sexp', p[1], p[2], p[3], p[4], p[5])
     elif len(p) == 5:
@@ -233,7 +262,10 @@ def p_sexp(p):
     elif len(p) == 3:
         p[0] = ('sexp', p[1], p[2])
     else:
-        p[0] = ('sexp', p[1])
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('sexp', p[1])
 
 
 def p_pexp(p):
@@ -292,4 +324,8 @@ except EOFError:
 if not s:
     pass
 result = parser.parse(s, debug=log)
+
 print(result)
+print("\n\n\nTABELA DE SIMBOLOS")
+print(symbols)
+print("\n\n\n")

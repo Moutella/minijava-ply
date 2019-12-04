@@ -57,6 +57,15 @@ def symbol_lookup(token):
         return symbols[token]
     return False
 
+def symbol_add(token, params):
+    current_value = symbol_lookup(token)
+    if current_value:
+        for param in params:
+            current_value[param]=params[param]
+        symbols[token] = current_value
+    else:
+        symbols[token] = params
+
 def t_ID(t):
     r'System.out.println|[a-zA-Z][a-zA-Z0-9_]*'
     t.type = reserved.get(t.value, 'ID')
