@@ -63,13 +63,14 @@ def p_vars(p):
         | vars var
         | empty
     '''
+
     if(len(p) == 2):
-        p[0] = ('vars', p[1])
+        if(p[1]):
+            p[0] = ('vars', p[1])
+        else:
+            p[0] = ('vars')
     elif(len(p)==3):
         p[0] = ('vars', p[1], p[2])
-    else:
-        p[0] = ('vars')
-    print(p[0])
     
 
 
@@ -78,7 +79,6 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
-    p[0]
     p[0] = ('vars',p[1],p[2],p[3])
 
 def p_metodos(p):
