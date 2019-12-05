@@ -31,8 +31,8 @@ cmd => LCURLY cmds RCURLY
      | PRINTLN LPARENS exp RPARENS SEMICOLON
      | ID ASSIGN exp SEMICOLON
      | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
-exp => exp AND rexp
-     | rexp
+##exp => exp AND rexp
+##     | rexp
 ##rexp => rexp LTHAN aexp
 ##    | rexp  EQUALS aexp
 ##    | rexp DIFFERENT aexp
