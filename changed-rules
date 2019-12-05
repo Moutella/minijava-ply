@@ -33,27 +33,27 @@ cmd => LCURLY cmds RCURLY
      | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
 exp => exp AND rexp
      | rexp
-rexp => rexp LTHAN aexp
-    | rexp  EQUALS aexp
-    | rexp DIFFERENT aexp
-    | aexp
-aexp => aexp PLUS mexp
-    | aexp MINUS mexp
-    | mexp
-mexp => mexp TIMES sexp
-    | sexp
-sexp =>NOT sexp
-    | MINUS sexp
-    | TRUE
-    | FALSE
-    | NUM
-    | NULL
-    | NEW INT LBRACKET exp RBRACKET
-    | pexp DOT LENGTH
-    | ID DOT LENGTH
-    | pexp LBRACKET exp RBRACKET
-    | ID LBRACKET exp RBRACKET
-    | ID
+##rexp => rexp LTHAN aexp
+##    | rexp  EQUALS aexp
+##    | rexp DIFFERENT aexp
+##    | aexp
+##aexp => aexp PLUS mexp
+##    | aexp MINUS mexp
+##    | mexp
+##mexp => mexp TIMES sexp
+##  | sexp
+## sexp =>NOT sexp
+##    | MINUS sexp
+##    | TRUE
+##    | FALSE
+##    | NUM
+??    | NULL 
+??    | NEW INT LBRACKET exp RBRACKET
+??    | pexp DOT LENGTH
+??    | ID DOT LENGTH
+??    | pexp LBRACKET exp RBRACKET
+??    | ID LBRACKET exp RBRACKET
+??    | ID
 pexp => THIS
     | NEW ID LPARENS RPARENS
     | LPARENS exp RPARENS
@@ -64,4 +64,4 @@ pexp => THIS
     | ID DOT ID LPARENS exps RPARENS
     | ID DOT ID LPARENS RPARENS
 exps => exps COMMA exp
-exps => exp
+    | exp
