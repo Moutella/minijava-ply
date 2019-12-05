@@ -12,10 +12,11 @@ def cgen(entrada):
     if type(entrada) == tuple:
         if entrada[0] == "mexp":
             cgenmexp(entrada)
-        if entrada[0] == "sexp":
+        elif entrada[0] == "sexp":
             cgensexp(entrada)
-        for item in entrada:
-            cgen(item)
+        else:
+            for item in entrada:
+                cgen(item)
     else:
         if type(entrada) == str:
             pass
@@ -24,20 +25,27 @@ def cgen(entrada):
 
 
 def cgenmexp(entrada):
-    print("renato {}".format(entrada))
+    print(entrada)
     if len(entrada) == 4:
-        cgen(entrada[1])
+        if type(entrada[1]) == int:
+            cgenint(entrada[1])
+        else:
+            cgen(entrada[1])
         print("sw $a0 0($sp)")
         print("addiu $sp $sp -4")
-        cgen(entrada[3])
+        if type(entrada[3]) == int:
+            cgenint(entrada[3])
+        else:
+            cgen(entrada[3])
         print("lw $t1 4($sp)")
         print("mul $a0 $t1 $a0")
         print("addiu $sp $sp 4")
     else:
-        pass
+        cgen(entrada[1])
 
 def cgensexp(entrada):
-    pass
+    if type(entrada[1]) == int:
+        cgenint(entrada[1])
 
 def cgenint(entrada):
     print("li $a0 {}".format(entrada))
