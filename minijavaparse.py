@@ -192,8 +192,18 @@ def p_rexp(p):
     '''
     if len(p) == 4:
         p[0] = ('rexp', p[1], p[2], p[3], p.lineno(0))
+        # if type(p[1]) == type (p[3]) == int:
+        #     if p[2] == "<":
+        #         p[0] = p[1] + p[3]
+        #     elif p[2] == "==":
+        #         pass
+        #     elif p[2]== "!=":
+        #         p[0] = p[1] - p[3]
     else:
-        p[0] = ('rexp', p[1], p.lineno(0))
+        if type(p[1]) == int:
+            p[0] == p[1]
+        else:
+            p[0] = ('rexp', p[1], p.lineno(0))
 
 def p_aexp(p):
     '''
@@ -202,9 +212,19 @@ def p_aexp(p):
         | mexp
     '''
     if len(p) == 4:
-        p[0] = ('aexp', p[1], p[2], p[3], p.lineno(0))
+        print("aexp: {} {} {}".format(p[1], p[2], p[3]))
+        if type(p[1]) == type (p[3]) == int:
+            if p[2] == "+":
+                p[0] = p[1] + p[3]
+            else:
+                p[0] = p[1] - p[3]
+        else:
+            p[0] = ('aexp', p[1], p[2], p[3], p.lineno(0))
     else:
-        p[0] = ('aexp', p[1], p.lineno(0))
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('aexp', p[1], p.lineno(0))
 
 
 def p_mexp(p):
@@ -212,10 +232,19 @@ def p_mexp(p):
     mexp : mexp TIMES sexp
         | sexp
     '''
+    
     if len(p) == 4:
-        p[0] = ('mexp', p[1], p[2], p[3], p.lineno(0))
+        print("mexp: {} {} {}".format(p[1], p[2], p[3]))
+        if type(p[1]) == type(p[3]) == int:
+            p[0] = p[1] * p[3]
+        else:
+            p[0] = ('mexp', p[1], p[2], p[3], p.lineno(0))
     else:
-        p[0] = ('mexp', p[1], p.lineno(0))
+        print("mexp: {}".format( p[1]))
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('mexp', p[1], p.lineno(0))
 
 def p_sexp(p):
     '''
@@ -242,7 +271,10 @@ def p_sexp(p):
     elif len(p) == 3:
         p[0] = ('sexp', p[1], p[2], p.lineno(0))
     else:
-        p[0] = ('sexp', p[1], p.lineno(0))
+        if type(p[1]) == int:
+            p[0] = p[1]
+        else:
+            p[0] = ('sexp', p[1], p.lineno(0))
 
 
 def p_pexp(p):

@@ -3,6 +3,9 @@
 table = [[]]
 scope_counter = 0
 dependencias = []
+method_list = {}
+
+
 def pop_scope():
     table.pop()
     global scope_counter
@@ -36,3 +39,17 @@ def check_dependencies():
             print("Class '{}' referenced at line #{} is not defined".format(item[0], item[1]))
             return False
     return True
+
+
+
+def add_method(classe, method):
+    if classe in method_list:
+        method_list[classe].append(method)
+    else:
+        method_list[classe] = [method]
+def search_method(classe, method, linenumber=0):
+    if classe in method_list:
+        if method not in method_list[classe]:
+            print("Method {} referenced from class {} is not defined".format(classe, method))
+    else:
+        print("Method {} referenced from class {} is not defined".format(classe, method))
