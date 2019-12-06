@@ -25,6 +25,8 @@ def add_symbol_to_dependencies(symbol, line):
     dependencias.append([symbol, line])
 
 def add_symbol_to_scope(var):
+    if var in table[scope_counter]:
+        print("Multiple definitions of {} at scope level {}".format(var, scope_counter))
     table[scope_counter].append(var)
 
 def check_dependencies():
