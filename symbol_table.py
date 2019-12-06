@@ -1,13 +1,11 @@
 
 
-table = []
+table = [[]]
 scope_counter = 0
-def new_scope(s):
-    table.append(s)
-    scope_counter+=1
-
+dependencias = []
 def pop_scope():
     table.pop()
+    global scope_counter
     scope_counter -= 1
 
 def symbol_lookup(var):
@@ -19,5 +17,18 @@ def symbol_lookup(var):
         print("SemanticError Name '{}' is not defined".format(var))
     return found
 
+def new_scope():
+    table.append([])
+    global scope_counter
+    scope_counter += 1
+def add_symbol_to_dependencies(symbol):
+    dependencias.append(symbol)
+
 def add_symbol_to_scope(var):
-    table[-1].append(var)
+    table[scope_counter].append(var)
+
+def check_dependencies():
+    for item in dependencias:
+        if item not in table[0]:
+            return False
+    return True

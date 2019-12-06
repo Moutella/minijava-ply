@@ -1,5 +1,6 @@
 import sys
 from minijavalex import tokens
+from symbol_table import *
 import ply.yacc as yacc
 import logging
 logging.basicConfig(
@@ -24,7 +25,7 @@ def p_main(p):
     '''
     main : CLASS ID LCURLY PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET ID RPAREN LCURLY cmd RCURLY RCURLY
     '''
-
+    add_symbol_to_scope(p[2])
     p[0] = ('main', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p[13], p[14], p[15], p[16], p[17])
 
@@ -49,8 +50,11 @@ def p_classe(p):
             | empty
     '''
     if(len(p) == 9):
+        add_symbol_to_scope(p[2])
+        add_symbol_to_dependencies(p[4])
         p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
     elif(len(p) == 7):
+        add_symbol_to_scope(p[2])
         p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6])
     else:
         p[0] = ('classe')
@@ -71,7 +75,6 @@ def p_vars(p):
             p[0] = ('vars')
     elif(len(p)==3):
         p[0] = ('vars', p[1], p[2])
-    
 
 
 def p_var(p):
@@ -79,7 +82,7 @@ def p_var(p):
     var : tipo ID SEMICOLON
         | ID ID SEMICOLON
     '''
-    p[0] = ('vars',p[1],p[2],p[3])
+    p[0] = ('var',p[1],p[2],p[3])
 
 def p_metodos(p):
     '''

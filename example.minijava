@@ -4,11 +4,13 @@ class Factorial{
     }
 }
 class Fac {
- public int ComputeFac(){
-    int num_aux;
-    while (num < 1){
-        num_aux = 1;
-    }
+    deusehtop blabla;
+    public int ComputeFac(){
+        int num_aux;
+        bakhndsjoabhndjasdsa deus;
+        while (num < 1){
+                num_aux = 1;
+            }
     return num_aux;
     }
 }
