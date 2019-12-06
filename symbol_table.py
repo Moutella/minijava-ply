@@ -30,5 +30,6 @@ def add_symbol_to_scope(var):
 def check_dependencies():
     for item in dependencias:
         if item not in table[0]:
+            print("Class '{}' is not defined".format(item))
             return False
     return True

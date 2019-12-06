@@ -1,6 +1,6 @@
 from minijavaparse import result, table
 from symbol_table import *
-new_scope()
+
 def semantics_check(node):
     if type(node) == tuple:
         if node[0] == "main":
@@ -10,7 +10,6 @@ def semantics_check(node):
             pop_scope()
             pop_scope()
         elif node[0] == "classe":
-            
             new_scope()
             if len(node) == 9:
                 semantics_check(node[6])
@@ -35,5 +34,8 @@ def semantics_check(node):
         # else:
         #     cgenint(entrada)
 
-    
+
+
+check_dependencies()
+new_scope()    
 semantics_check(result)
