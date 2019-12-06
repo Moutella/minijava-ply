@@ -22,7 +22,7 @@ def cgen(entrada):
         elif entrada[0] == "cmd":
             cgencmd(entrada)
         else:
-            for item in entrada:
+            for item in entrada[0:-1]:
                 cgen(item)
     else:
         if type(entrada) == str:
