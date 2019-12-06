@@ -32,7 +32,7 @@ def cgen(entrada):
 
 
 def cgencmd(entrada):
-    if len(entrada) == 8 and entrada[1] == "if":
+    if len(entrada) == 9 and entrada[1] == "if":
         cgen(entrada[3])
         current_branch = branchcounter
         label_else = "branch_else{}".format(current_branch)
@@ -44,7 +44,7 @@ def cgencmd(entrada):
         cgen(entrada[7])
         print("{}:".format(label_end))
         add_branch_counter()
-    elif len(entrada) == 6 and entrada[1] == "if":
+    elif len(entrada) == 7 and entrada[1] == "if":
         cgen(entrada[3])
         current_branch = branchcounter
         label_end = "branch_end{}".format(current_branch)
@@ -52,7 +52,7 @@ def cgencmd(entrada):
         cgen(entrada[5])
         print("{}:".format(label_end))
         add_branch_counter()
-    elif len(entrada) == 6 and entrada[1] == "while":
+    elif len(entrada) == 7 and entrada[1] == "while":
         current_branch = branchcounter
         label_while = "branch_while{}".format(current_branch)
         label_end = "branch_end{}".format(current_branch)
@@ -71,7 +71,7 @@ def cgencmd(entrada):
             cgen(item)
 
 def cgenexp(entrada):
-    if len(entrada) == 4:
+    if len(entrada) == 5:
         cgen(entrada[1])
         print("sw $a0 0($sp)")
         print("addiu $sp $sp -4")
@@ -92,7 +92,7 @@ def cgenexp(entrada):
     else:
         cgen(entrada[1])
 def cgenrexp(entrada):
-    if len(entrada) == 4:
+    if len(entrada) == 5:
         cgen(entrada[1])
         print("sw $a0 0($sp)")
         print("addiu $sp $sp -4")
@@ -126,7 +126,7 @@ def cgenrexp(entrada):
     else:
         cgen(entrada[1])
 def cgenaexp(entrada):
-    if len(entrada) == 4:
+    if len(entrada) == 5:
         cgen(entrada[1])
         print("sw $a0 0($sp)")
         print("addiu $sp $sp -4")
@@ -138,7 +138,7 @@ def cgenaexp(entrada):
         cgen(entrada[1])
 
 def cgenmexp(entrada):
-    if len(entrada) == 4:
+    if len(entrada) == 5:
         cgen(entrada[1])
         print("sw $a0 0($sp)")
         print("addiu $sp $sp -4")
@@ -150,7 +150,7 @@ def cgenmexp(entrada):
         cgen(entrada[1])
 
 def cgensexp(entrada):
-    if len(entrada) == 3:
+    if len(entrada) == 4:
         cgen(entrada[2])
         if entrada[1] == '!':
             current_branch = branchcounter
