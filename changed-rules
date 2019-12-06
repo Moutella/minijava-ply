@@ -25,12 +25,12 @@ tipo => INT LBRACKET RBRACKET
 cmds => cmd
 cmds => cmds cmd
 cmd => LCURLY cmds RCURLY
-     | IF LPARENS exp RPARENS cmd
-     | IF LPARENS exp RPARENS cmd ELSE cmd
-     | WHILE LPARENS exp RPARENS cmd
+##     | IF LPARENS exp RPARENS cmd
+##     | IF LPARENS exp RPARENS cmd ELSE cmd
+*     | WHILE LPARENS exp RPARENS cmd
      | PRINTLN LPARENS exp RPARENS SEMICOLON
-     | ID ASSIGN exp SEMICOLON
-     | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
+*     | ID ASSIGN exp SEMICOLON
+*     | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
 ##exp => exp AND rexp
 ##     | rexp
 ##rexp => rexp LTHAN aexp

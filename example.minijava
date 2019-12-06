@@ -6,11 +6,10 @@ class Factorial{
 class Fac {
  public int ComputeFac(){
     int num_aux;
-    boolean boladao;
-    boolean boladao2;
-    boladao = !1;
-    boladao2 = !2;
-    num_aux = 3 - 5;
+    if (num < 1)
+        num_aux = 1;
+      else
+        num_aux = 0;
     return num_aux;
     }
 }

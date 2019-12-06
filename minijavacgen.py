@@ -19,6 +19,8 @@ def cgen(entrada):
             cgenmexp(entrada)
         elif entrada[0] == "sexp":
             cgensexp(entrada)
+        elif entrada[0] == "cmd":
+            cgencmd(entrada)
         else:
             for item in entrada:
                 cgen(item)
@@ -27,6 +29,32 @@ def cgen(entrada):
             cgenstring(entrada)
         else:
             cgenint(entrada)
+
+
+def cgencmd(entrada):
+    if len(entrada) == 8 and entrada[1] == "if":
+        cgen(entrada[3])
+        current_branch = branchcounter
+        label_else = "branch_else{}".format(current_branch)
+        label_end = "branch_end{}".format(current_branch)
+        print("beq $a0 $zero {}".format(label_else))
+        cgen(entrada[5])
+        print("j {}".format(label_end))
+        print("{}:".format(label_else))
+        cgen(entrada[7])
+        print("{}:".format(label_end))
+        add_branch_counter()
+    elif len(entrada) == 6 and entrada[1] == "if":
+        cgen(entrada[3])
+        current_branch = branchcounter
+        label_end = "branch_end{}".format(current_branch)
+        print("beq $a0 $zero {}".format(label_end))
+        cgen(entrada[5])
+        print("{}:".format(label_end))
+    else:
+        for item in entrada:
+            cgen(item)
+
 def cgenexp(entrada):
     if len(entrada) == 4:
         cgen(entrada[1])
