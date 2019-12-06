@@ -22,7 +22,7 @@ def cgen(entrada):
         elif entrada[0] == "cmd":
             cgencmd(entrada)
         else:
-            for item in entrada[0:-1]:
+            for item in entrada[:-1]:
                 cgen(item)
     else:
         if type(entrada) == str:
@@ -65,9 +65,8 @@ def cgencmd(entrada):
         print("j {}".format(label_while))
         print("{}:".format(label_end))
 
-
     else:
-        for item in entrada:
+        for item in entrada[:-1]:
             cgen(item)
 
 def cgenexp(entrada):
@@ -91,6 +90,8 @@ def cgenexp(entrada):
         add_branch_counter()
     else:
         cgen(entrada[1])
+
+
 def cgenrexp(entrada):
     if len(entrada) == 5:
         cgen(entrada[1])
