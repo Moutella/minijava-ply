@@ -27,7 +27,7 @@ cmds => cmds cmd
 cmd => LCURLY cmds RCURLY
 ##     | IF LPARENS exp RPARENS cmd
 ##     | IF LPARENS exp RPARENS cmd ELSE cmd
-*     | WHILE LPARENS exp RPARENS cmd
+##     | WHILE LPARENS exp RPARENS cmd
      | PRINTLN LPARENS exp RPARENS SEMICOLON
 *     | ID ASSIGN exp SEMICOLON
 *     | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON

@@ -51,6 +51,21 @@ def cgencmd(entrada):
         print("beq $a0 $zero {}".format(label_end))
         cgen(entrada[5])
         print("{}:".format(label_end))
+        add_branch_counter()
+    elif len(entrada) == 6 and entrada[1] == "while":
+        current_branch = branchcounter
+        label_while = "branch_while{}".format(current_branch)
+        label_end = "branch_end{}".format(current_branch)
+
+        print("{}:".format(label_while))
+        cgen(entrada[3])
+        print("beq $a0 $zero {}".format(label_end))
+        cgen(entrada[5])
+
+        print("j {}".format(label_while))
+        print("{}:".format(label_end))
+
+
     else:
         for item in entrada:
             cgen(item)
