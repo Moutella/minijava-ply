@@ -23,10 +23,10 @@ def semantics_check(node):
             if type(node[1]) != tuple:
                 symbol_lookup(node[1], node[-1])
             add_symbol_to_scope(node[2])
-        elif node[0] == "metodo":
-            if type(node[1]) != tuple:
-                symbol_lookup(node[1], node[-1])
-            add_symbol_to_scope(node[2])
+        # elif node[0] == "metodo":
+        #     if type(node[1]) != tuple:
+        #         symbol_lookup(node[1], node[-1])
+        #     add_symbol_to_scope(node[2])
         else:
             for item in node:
                 semantics_check(item)

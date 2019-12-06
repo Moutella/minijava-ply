@@ -4,13 +4,9 @@ class Factorial{
     }
 }
 class Fac {
-    deusehtop blabla;
     public int ComputeFac(){
         int num_aux;
-        bakhndsjoabhndjasdsa deus;
-        while (num < 234 + 375){
-            num_aux = 1;
-        }
-    return num_aux;
+        num_aux = 99 + 100 + 15 - 30;
+        return num_aux;
     }
 }

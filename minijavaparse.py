@@ -201,7 +201,7 @@ def p_rexp(p):
         #         p[0] = p[1] - p[3]
     else:
         if type(p[1]) == int:
-            p[0] == p[1]
+            p[0] = p[1]
         else:
             p[0] = ('rexp', p[1], p.lineno(0))
 
