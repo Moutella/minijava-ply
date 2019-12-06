@@ -18,7 +18,7 @@ start = 'prog'
 
 def p_prog(p):
     'prog : main classes'
-    p[0] = (p[0], p[1], p[2], p.lineno(0))
+    p[0] = ('prog', p[1], p[2], p.lineno(0))
 
 
 def p_main(p):
@@ -313,7 +313,7 @@ def p_exps(p):
 
 def p_error(p):
     if p:
-        print("Erro de sintace no token: {}".format(p))
+        print("Erro de sintaxe no token: {}".format(p))
         parser.errok()
     else:
         print("Erro de sintaxe com EOF")
