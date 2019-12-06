@@ -88,8 +88,6 @@ def t_NUMBER(t):
 
 def t_newline(t):
     r'\n+'
-
-    print("{} {}".format(t, len(t.value)))
     t.lexer.lineno += len(t.value)
 
 
