@@ -11,7 +11,7 @@ def semantics_check(node):
             pop_scope()
         elif node[0] == "classe":
             new_scope()
-            if len(node) == 9:
+            if len(node) == 10:
                 semantics_check(node[6])
                 semantics_check(node[7])
             else:
@@ -21,7 +21,7 @@ def semantics_check(node):
 
         elif node[0] == "var":
             if type(node[1]) != tuple:
-                symbol_lookup(node[1])
+                symbol_lookup(node[1], node[-1])
             add_symbol_to_scope(node[2])
 
         else:

@@ -88,6 +88,8 @@ def t_NUMBER(t):
 
 def t_newline(t):
     r'\n+'
+
+    print("{} {}".format(t, len(t.value)))
     t.lexer.lineno += len(t.value)
 
 
@@ -105,8 +107,3 @@ for line in code:
     codetxt += line
 
 lexer.input(codetxt)
-
-while True:
-    tok = lexer.token()
-    if not tok:
-        break
