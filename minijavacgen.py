@@ -21,6 +21,8 @@ def cgen(entrada):
             cgensexp(entrada)
         elif entrada[0] == "cmd":
             cgencmd(entrada)
+#        elif entrada[0] == "metodo":
+#            cgenmetodo(entrada)
         else:
             for item in entrada[:-1]:
                 cgen(item)
@@ -30,6 +32,16 @@ def cgen(entrada):
         else:
             cgenint(entrada)
 
+
+def cgenmetodo(entrada):
+    current_branch = branchcounter
+    label_func = "func{}".format(current_branch)
+    print("{}:".format(label_func))
+    print("addi $sp, $sp, -8")
+    print("sw $s0, $sp")
+    print("sw $ra, 4($sp)")
+    add_branch_counter()
+pass
 
 def cgencmd(entrada):
     if len(entrada) == 9 and entrada[1] == "if":
