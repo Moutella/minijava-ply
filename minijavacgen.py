@@ -64,7 +64,10 @@ def cgencmd(entrada):
 
         print("j {}".format(label_while))
         print("{}:".format(label_end))
-
+    elif len(entrada) == 7 and entrada[1] == "System.out.println":
+        print("li $v0, 1")
+        cgen(entrada[3])
+        print("syscall")
     else:
         for item in entrada[:-1]:
             cgen(item)
