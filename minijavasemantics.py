@@ -18,7 +18,27 @@ def semantics_check(node):
                 semantics_check(node[4])
                 semantics_check(node[5])
             pop_scope()
-
+        elif node[0] == "pexp":
+            if type(node[1])!=tuple:
+                if len(node)==5:
+                    symbol_lookup(node[1], node[-1])
+                    search_method(node[1],node[3],node[-1])
+                elif len(node)==8:
+                    symbol_lookup(node[1], node[-1])
+                    search_method(node[1],node[3],node[-1])
+                elif len(node)==7:
+                    symbol_lookup(node[1], node[-1])
+                    search_method(node[1],node[3],node[-1])
+                elif len(node)==6:
+                    symbol_lookup(node[2], node[-1])
+            else:
+                semantics_check(node[1])
+        elif node[0] == "cmd":
+            if len(node)==6:
+                symbol_lookup(node[1],node[-1])
+            elif len(node)==9:
+                if node[1]!="if":
+                    symbol_lookup(node[1],node[-1])
         elif node[0] == "var":
             if type(node[1]) != tuple:
                 symbol_lookup(node[1], node[-1])
