@@ -212,7 +212,6 @@ def p_aexp(p):
         | mexp
     '''
     if len(p) == 4:
-        print("aexp: {} {} {}".format(p[1], p[2], p[3]))
         if type(p[1]) == type (p[3]) == int:
             if p[2] == "+":
                 p[0] = p[1] + p[3]
@@ -234,13 +233,11 @@ def p_mexp(p):
     '''
     
     if len(p) == 4:
-        print("mexp: {} {} {}".format(p[1], p[2], p[3]))
         if type(p[1]) == type(p[3]) == int:
             p[0] = p[1] * p[3]
         else:
             p[0] = ('mexp', p[1], p[2], p[3], p.lineno(0))
     else:
-        print("mexp: {}".format( p[1]))
         if type(p[1]) == int:
             p[0] = p[1]
         else:

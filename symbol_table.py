@@ -47,6 +47,7 @@ def add_method(classe, method):
         method_list[classe].append(method)
     else:
         method_list[classe] = [method]
+        
 def search_method(classe, method, linenumber=0):
     if classe in method_list:
         if method not in method_list[classe]:
