@@ -21,10 +21,10 @@ def cgen(entrada):
             cgensexp(entrada)
         elif entrada[0] == "cmd":
             cgencmd(entrada)
-#        elif entrada[0] == "metodo":
-#            cgenmetodo(entrada)
-#        elif entrada[0] == "params":
- #           cgenparams(entrada)
+        elif entrada[0] == "metodo":
+            cgenmetodo(entrada)
+        elif entrada[0] == "params":
+            cgenparams(entrada)
         else:
             for item in entrada[:-1]:
                 cgen(item)
@@ -63,7 +63,11 @@ def cgenmetodo(entrada):
     print("sw $ra 0($sp)")
     print("addiu $sp $sp -4")
     cgen(entrada[5])
+
+    cgen(entrada[9])
+    cgen(entrada[11])
     add_branch_counter()
+
 pass
 
 def cgencmd(entrada):

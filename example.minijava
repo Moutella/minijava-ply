@@ -4,9 +4,11 @@ class Factorial{
     }
 }
 class Fac {
-    public int ComputeFac(){
+    public int ComputeFac(int x, int y, int z){
         int jose;
-        blabla = 5;
+        while (jose < 1){
+                jose = 1;
+            }
         return 5;
     }
 }
