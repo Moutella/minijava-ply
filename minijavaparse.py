@@ -15,6 +15,7 @@ if sys.version_info[0] >= 3:
 
 start = 'prog'
 
+classe_atual = None
 
 def p_prog(p):
     'prog : main classes'
@@ -49,11 +50,14 @@ def p_classe(p):
             | CLASS ID LCURLY vars metodos RCURLY
             | empty
     '''
+    
     if(len(p) == 9):
+        current_class(p[2])
         add_symbol_to_scope(p[2])
         add_symbol_to_dependencies(p[4], p.lineno(4))
         p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p.lineno(0))
     elif(len(p) == 7):
+        current_class(p[2])
         add_symbol_to_scope(p[2])
         p[0] = ('classe', p[1], p[2], p[3], p[4], p[5], p[6], p.lineno(0))
     else:
@@ -104,10 +108,12 @@ def p_metodo(p):
             | PUBLIC ID ID LPAREN RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY
             | empty
     '''
-    if(len(p)==14):
+    if len(p)==14:
+            add_method_queue(p[3])
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p[13], p.lineno(0))
-    if(len(p)==13):
+    elif len(p)==13:
+            add_method_queue(p[3])
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p.lineno(0))
     else:
