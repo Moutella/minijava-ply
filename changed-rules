@@ -12,12 +12,12 @@ metodos => metodo
 metodos => metodos metodo
 metodo => PUBLIC tipo ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
 metodo => PUBLIC tipo ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
-metodo => PUBLIC ID ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
+*metodo => PUBLIC ID ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
 metodo => PUBLIC ID ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
-params => tipo ID
-params => params COMMA tipo ID
-params => ID ID 
-params => params COMMA ID ID 
+##params => tipo ID
+##params => params COMMA tipo ID
+##params => ID ID
+##params => params COMMA ID ID
 tipo => INT LBRACKET RBRACKET
     | BOOLEAN
     | INT

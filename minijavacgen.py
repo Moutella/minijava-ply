@@ -23,6 +23,8 @@ def cgen(entrada):
             cgencmd(entrada)
 #        elif entrada[0] == "metodo":
 #            cgenmetodo(entrada)
+#        elif entrada[0] == "params":
+ #           cgenparams(entrada)
         else:
             for item in entrada[:-1]:
                 cgen(item)
@@ -32,14 +34,35 @@ def cgen(entrada):
         else:
             cgenint(entrada)
 
+def add_param_counter():
+    global paramcounter
+    paramcounter += 1
+def restart_param_counter():
+    global paramcounter
+    paramcounter = 2
+
+def cgenparams(entrada):
+    if(len(entrada) == 4):
+        print("lw $a0 4($fp)")
+        print("sw $a0 0($sp)")
+        print("addi $sp $sp -4")
+    elif len(entrada) == 6:
+        print("lw $a0 %d($fp)"%(paramcounter*4))
+        print("sw $a0 0($sp)")
+        print("addi $sp $sp -4")
+        add_param_counter()
+        cgenparams(entrada[1])
 
 def cgenmetodo(entrada):
+    print(len(entrada))
+    print(entrada)
     current_branch = branchcounter
     label_func = "func{}".format(current_branch)
     print("{}:".format(label_func))
-    print("addi $sp, $sp, -8")
-    print("sw $s0, $sp")
-    print("sw $ra, 4($sp)")
+    print("move $fp $sp")
+    print("sw $ra 0($sp)")
+    print("addiu $sp $sp -4")
+    cgen(entrada[5])
     add_branch_counter()
 pass
 
@@ -199,4 +222,5 @@ def cgenstring(entrada):
         print("li $a0 0")
 
 branchcounter = 0
+paramcounter = 2
 cgen(result) 

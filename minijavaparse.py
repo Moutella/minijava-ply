@@ -107,7 +107,7 @@ def p_metodo(p):
     if(len(p)==14):
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p[13], p.lineno(0))
-    if(len(p)==13):
+    elif(len(p)==13):
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p.lineno(0))
     else:
@@ -125,7 +125,7 @@ def p_params(p):
     if len(p) == 3:
         p[0] = ('params', p[1], p[2], p.lineno(0))
     else:
-        p[0] = ('params', p[1], p[2], p[3], p[4], p[5], p.lineno(0))
+        p[0] = ('params', p[1], p[2], p[3], p[4], p.lineno(0))
 
 
 def p_tipo(p):
