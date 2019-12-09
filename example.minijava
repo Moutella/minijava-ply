@@ -11,7 +11,7 @@ class Fac {
     }
 }
 class OutraClasse {
-    public int ComputeFac(int num, int blabla, int hdsuaihdsau){
+    public int ComputeFac2(int num, int blabla, int hdsuaihdsau){
         int jose;
         djsakldsa = 5;
         return 5;

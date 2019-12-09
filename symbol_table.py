@@ -7,7 +7,6 @@ method_list = {}
 classless_methods = []
 
 def pop_scope():
-    print(table)
     table.pop()
     global scope_counter
     scope_counter -= 1

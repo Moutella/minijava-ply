@@ -63,7 +63,6 @@ def cgenmetodo(entrada):
     print("addiu $sp $sp -4")
     cgen(entrada[5])
     # cgen(entrada[8])
-    print("Print metodo!", entrada[5])
     cgen(entrada[9])
     cgen(entrada[11])
 

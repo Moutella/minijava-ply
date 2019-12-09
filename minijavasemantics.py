@@ -85,4 +85,3 @@ def semantics_check(node):
 check_dependencies()
 new_scope()    
 semantics_check(result)
-print(method_list)
