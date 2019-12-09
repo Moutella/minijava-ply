@@ -56,16 +56,12 @@ def cgenparams(entrada):
         cgenparams(entrada[1])
 
 def cgenmetodo(entrada):
-    # print(entrada)
-    current_branch = branchcounter
-    label_func = "func{}".format(current_branch)
+    label_func = entrada[3]
     print("{}:".format(label_func))
     print("move $fp $sp")
     print("sw $ra 0($sp)")
     print("addiu $sp $sp -4")
     cgen(entrada[5])
-    # cgen(entrada[8])
-    print("Print metodo!", entrada[5])
     cgen(entrada[9])
     cgen(entrada[11])
 
