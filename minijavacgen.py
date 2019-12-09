@@ -64,11 +64,7 @@ def cgenmetodo(entrada):
     print("move $fp $sp")
     print("sw $ra 0($sp)")
     print("addiu $sp $sp -4")
-    cgen(entrada[5])
-    # cgen(entrada[8])
     cgen(entrada[9])
-    cgen(entrada[11])
-
     print("lw $ra 4($sp)")
     print("addiu $sp $sp %d"%(paramcounter*4+8))
 
