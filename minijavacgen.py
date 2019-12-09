@@ -1,7 +1,6 @@
 from minijavaparse import result
+from minijavasemantics import *
 
-
-print(result)
 def uniqueprint(entrada):
     if type(entrada) == tuple:
         for item in entrada:
@@ -293,4 +292,3 @@ def cgenpexp(entrada):
 
 branchcounter = 0
 paramcounter = 1
-cgen(result)
