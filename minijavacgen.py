@@ -50,11 +50,12 @@ def cgenparams(entrada):
         print("lw $a0 4($fp)")
         print("sw $a0 0($sp)")
         print("addi $sp $sp -4")
+        restart_param_counter()
     elif len(entrada) == 6:
+        add_param_counter()
         print("lw $a0 %d($fp)"%(paramcounter*4))
         print("sw $a0 0($sp)")
         print("addi $sp $sp -4")
-        add_param_counter()
         cgenparams(entrada[1])
 
 def cgenmetodo(entrada):
@@ -67,6 +68,12 @@ def cgenmetodo(entrada):
     # cgen(entrada[8])
     cgen(entrada[9])
     cgen(entrada[11])
+
+    print("lw $ra 4($sp)")
+    print("addiu $sp $sp %d"%(paramcounter*4+8))
+
+    print("lw $fp 0($sp)")
+    print("jr $ra")
 
 def cgencmd(entrada):
     if len(entrada) == 9 and entrada[1] == "if":
@@ -285,5 +292,5 @@ def cgenpexp(entrada):
 
 
 branchcounter = 0
-paramcounter = 2
+paramcounter = 1
 cgen(result)
