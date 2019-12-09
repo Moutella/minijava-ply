@@ -34,13 +34,8 @@ def cgen(entrada):
             # print("\nparams\n")
             cgenparams(entrada)
         elif entrada[0] == "var":
-            # print("\nvar\n")
+            print("\nvar\n")
             cgenvar(entrada)
-        elif entrada[0] == "vars":
-            # print("\nvars")
-            #  print(entrada[1])
-            # print("\n")
-            cgen(entrada[1])
         else:
             for item in entrada[:-1]:
                 cgen(item)
@@ -79,8 +74,7 @@ def cgenmetodo(entrada):
     print("sw $ra 0($sp)")
     print("addiu $sp $sp -4")
     cgen(entrada[5])
-    # cgen(entrada[8])
-    print("Print metodo!", entrada[5])
+    cgen(entrada[8])
     cgen(entrada[9])
     cgen(entrada[11])
 
