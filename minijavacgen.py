@@ -10,25 +10,42 @@ def uniqueprint(entrada):
         print(entrada)
 
 def cgen(entrada):
+    # print(entrada)
     if type(entrada) == tuple:
         if entrada[0] == "rexp":
+            # print("\nrexp\n")
             cgenrexp(entrada)
         elif entrada[0] == "aexp":
+            # print("\naexp\n")
             cgenaexp(entrada)
         elif entrada[0] == "mexp":
+            # print("\nmexp\n")
             cgenmexp(entrada)
         elif entrada[0] == "sexp":
+            # print("\nsexp\n")
             cgensexp(entrada)
         elif entrada[0] == "cmd":
+            # print("\ncmd\n")
             cgencmd(entrada)
         elif entrada[0] == "metodo":
+            # print("\nmetodo\n")
             cgenmetodo(entrada)
         elif entrada[0] == "params":
+            # print("\nparams\n")
             cgenparams(entrada)
+        elif entrada[0] == "var":
+            # print("\nvar\n")
+            cgenvar(entrada)
+        elif entrada[0] == "vars":
+            # print("\nvars")
+            #  print(entrada[1])
+            # print("\n")
+            cgen(entrada[1])
         else:
             for item in entrada[:-1]:
                 cgen(item)
     else:
+        # print("\nelse\n")
         if type(entrada) == str:
             cgenstring(entrada)
         else:
@@ -54,8 +71,7 @@ def cgenparams(entrada):
         cgenparams(entrada[1])
 
 def cgenmetodo(entrada):
-    print(len(entrada))
-    print(entrada)
+    # print(entrada)
     current_branch = branchcounter
     label_func = "func{}".format(current_branch)
     print("{}:".format(label_func))
@@ -63,7 +79,8 @@ def cgenmetodo(entrada):
     print("sw $ra 0($sp)")
     print("addiu $sp $sp -4")
     cgen(entrada[5])
-
+    # cgen(entrada[8])
+    print("Print metodo!", entrada[5])
     cgen(entrada[9])
     cgen(entrada[11])
     add_branch_counter()
@@ -123,7 +140,7 @@ def cgencmd(entrada):
         cgen(entrada[3])
         print("move $t1 $a0")
         print("la $a0 {}".format(entrada[1]))
-        print("sw $a1 0($a0)")
+        print("sw $t1 0($a0)")
 
     else:
         for item in entrada[:-1]:
@@ -203,10 +220,11 @@ def cgenvar(entrada):
         if entrada[1][1] == "boolean":
             print("{}: .byte 2")
         elif entrada[1][1] == "int":
-            if len(entrada[1]==3):
-                print("{}: .word 64")
+            if type(entrada[1])==bool:
+                print("{}: .word 4".format())
             else:
-                print("{}: .word 4")
+                print("{}: .word 64")
+                
     else:
         pass
 
@@ -252,7 +270,7 @@ def cgensexp(entrada):
             print("lw $a0 0($a0)")
             print("addiu $sp $sp 4")
     elif len(entrada)==3:
-        if entrada[1]!="true" and entrada[1]!="false" and type(entrada[1])!=int:
+        if entrada[1]!="true" and entrada[1]!="false" and type(entrada[1])==str:
             print("la $a0 {}".format(entrada))
 
 

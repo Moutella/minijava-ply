@@ -42,6 +42,7 @@ def check_dependencies():
     return True
 
 def add_method_queue(method):
+    print(method)
     classless_methods.append(method)
 
 def current_class(classe):
@@ -57,9 +58,15 @@ def add_method(classe, method):
         classless_methods.remove(method)
 
 def search_method(classe, method, linenumber=0):
-    print(classe)
     if classe in method_list:
         if method not in method_list[classe]:
-            print("Method {} referenced from class {} is not defined".format(classe, method))
+            print("Method {} referenced at line {} from class {} is not defined".format(classe, linenumber, method))
     else:
-        print("Method {} referenced from class {} is not defined".format(classe, method))
+        print("Method {} referenced at line {} from class {} is not defined".format(classe, linenumber, method))
+
+def verify_method_params(num, method, classe, linenumber=0):
+    if classe in method_list:
+        if method in method_list[classe]:
+            if num == method_list[classe][method]['size']:
+                return True
+    print("Method {} referenced at line {} from class {} is being called with the wrong number of parameters".format( method, linenumber, classe))

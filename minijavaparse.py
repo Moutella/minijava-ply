@@ -16,7 +16,7 @@ if sys.version_info[0] >= 3:
 start = 'prog'
 
 classe_atual = None
-
+conta_variaveis = 0
 def p_prog(p):
     'prog : main classes'
     p[0] = ('prog', p[1], p[2], p.lineno(0))
@@ -108,12 +108,21 @@ def p_metodo(p):
             | PUBLIC ID ID LPAREN RPAREN LCURLY vars cmds RETURN exp SEMICOLON RCURLY
             | empty
     '''
+    
+    global conta_variaveis
     if len(p)==14:
-            add_method_queue(p[3])
+            add_method_queue({p[3]: {
+                'size': conta_variaveis,
+            }})
+            conta_variaveis = 0
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p[13], p.lineno(0))
     elif len(p)==13:
-            add_method_queue(p[3])
+            add_method_queue({p[3]: {
+                'size': conta_variaveis,
+            }})
+            conta_variaveis = 0
+            
             p[0] = ('metodo', p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8],
             p[9], p[10], p[11], p[12], p.lineno(0))
     else:
@@ -128,9 +137,13 @@ def p_params(p):
     | ID ID
     | params COMMA ID ID
     '''
+
+    global conta_variaveis
     if len(p) == 3:
+        conta_variaveis = 1
         p[0] = ('params', p[1], p[2], p.lineno(0))
     else:
+        conta_variaveis += 1
         p[0] = ('params', p[1], p[2], p[3], p[4], p.lineno(0))
 
 

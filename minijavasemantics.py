@@ -1,5 +1,14 @@
 from minijavaparse import result, table
 from symbol_table import *
+
+conta_chamada_atual = 0
+def conta_parametros(node, counter):
+    global conta_chamada_atual
+    if type(node) == tuple:
+        for item in node:
+            conta_parametros(item, conta_chamada_atual)
+    if node == 'exp':
+        conta_chamada_atual += 1
 def semantics_check(node):
     if type(node) == tuple:
         if node[0] == "main":
@@ -18,19 +27,16 @@ def semantics_check(node):
                 semantics_check(node[5])
             pop_scope()
         elif node[0] == "pexp":
-            print(node)
-            print(node[1])
-            print(len(node))
-            print(len(node[1]))
+            
             if type(node[1])!=tuple:
                 if len(node)==5:
                     semantics_check(node[1])
                     symbol_lookup(node[1], node[-1])
                     search_method(node[1],node[3],node[-1])
                 elif len(node)==8:
-                    semantics_check(node[1])
                     symbol_lookup(node[1], node[-1])
-                    search_method(node[1],node[3],node[-1])
+                    search_method(node[1][2],node[3],node[-1])
+                    semantics_check(node[1])
                 elif len(node)==7:
                     semantics_check(node[1])
                     symbol_lookup(node[1], node[-1])
@@ -42,7 +48,16 @@ def semantics_check(node):
                     semantics_check(node[1])
                     pass
             else:
-                semantics_check(node[1])
+                if len(node)==8:
+                    search_method(node[1][2],node[3],node[-1])
+                    conta_parametros(node[5], 0)
+                    global conta_chamada_atual
+                    print(conta_chamada_atual)
+                    verify_method_params(conta_chamada_atual, node[3], node[1][2], node[-1])
+                    conta_chamada_atual = 0
+                    
+                else:
+                    semantics_check(node[1])
         elif node[0] == "cmd":
             if len(node)==6:
                 symbol_lookup(node[1],node[-1])
