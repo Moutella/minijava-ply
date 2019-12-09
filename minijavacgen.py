@@ -27,6 +27,8 @@ def cgen(entrada):
             cgenparams(entrada)
         elif entrada[0] == "var":
             cgenvar(entrada)
+        elif entrada[0] == "pexp":
+            cgenpexp(entrada)
         else:
             for item in entrada[:-1]:
                 cgen(item)
@@ -250,6 +252,8 @@ def cgensexp(entrada):
             print("add $a0 $a0 $t1")
             print("lw $a0 0($a0)")
             print("addiu $sp $sp 4")
+    elif len(entrada) == 3 and entrada[1][0] == "pexp":
+        cgen(entrada[1])
     elif len(entrada)==3:
         if entrada[1]!="true" and entrada[1]!="false" and type(entrada[1])==str:
             print("la $a0 {}".format(entrada))
@@ -271,6 +275,12 @@ def cgenstring(entrada):
 
 def cgenpexp(entrada):
     if len(entrada) == 8:
+        print("sw $fp 0($sp)")
+        print("addiu $sp $sp -4")
+        print("lw $a0 4($fp)")
+        print("sw $a0 0($sp)")
+        print("addiu $sp $sp -4")
+        print("jal {}".format(entrada[3]))
         pass
 
 
