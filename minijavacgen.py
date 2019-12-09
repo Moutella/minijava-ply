@@ -10,28 +10,20 @@ def uniqueprint(entrada):
         print(entrada)
 
 def cgen(entrada):
-    # print(entrada)
     if type(entrada) == tuple:
         if entrada[0] == "rexp":
-            # print("\nrexp\n")
             cgenrexp(entrada)
         elif entrada[0] == "aexp":
-            # print("\naexp\n")
             cgenaexp(entrada)
         elif entrada[0] == "mexp":
-            # print("\nmexp\n")
             cgenmexp(entrada)
         elif entrada[0] == "sexp":
-            # print("\nsexp\n")
             cgensexp(entrada)
         elif entrada[0] == "cmd":
-            # print("\ncmd\n")
             cgencmd(entrada)
         elif entrada[0] == "metodo":
-            # print("\nmetodo\n")
             cgenmetodo(entrada)
         elif entrada[0] == "params":
-            # print("\nparams\n")
             cgenparams(entrada)
         elif entrada[0] == "var":
             print("\nvar\n")
@@ -40,7 +32,6 @@ def cgen(entrada):
             for item in entrada[:-1]:
                 cgen(item)
     else:
-        # print("\nelse\n")
         if type(entrada) == str:
             cgenstring(entrada)
         else:
