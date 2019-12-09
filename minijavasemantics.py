@@ -52,7 +52,6 @@ def semantics_check(node):
                     search_method(node[1][2],node[3],node[-1])
                     conta_parametros(node[5], 0)
                     global conta_chamada_atual
-                    print(conta_chamada_atual)
                     verify_method_params(conta_chamada_atual, node[3], node[1][2], node[-1])
                     conta_chamada_atual = 0
                     

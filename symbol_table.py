@@ -42,7 +42,6 @@ def check_dependencies():
     return True
 
 def add_method_queue(method):
-    print(method)
     classless_methods.append(method)
 
 def current_class(classe):
