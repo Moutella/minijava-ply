@@ -12,47 +12,47 @@ metodos => metodo
 metodos => metodos metodo
 metodo => PUBLIC tipo ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
 metodo => PUBLIC tipo ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
-*metodo => PUBLIC ID ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
+metodo => PUBLIC ID ID LPARENS params RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
 metodo => PUBLIC ID ID LPARENS RPARENS LCURLY vars cmds RETURN exp SEMICOLON RCURLY
-##params => tipo ID
-##params => params COMMA tipo ID
-##params => ID ID
-##params => params COMMA ID ID
+params => tipo ID
+params => params COMMA tipo ID
+params => ID ID
+params => params COMMA ID ID
 tipo => INT LBRACKET RBRACKET
     | BOOLEAN
     | INT
 cmds => cmd
 cmds => cmds cmd
 cmd => LCURLY cmds RCURLY
-##     | IF LPARENS exp RPARENS cmd
-##     | IF LPARENS exp RPARENS cmd ELSE cmd
-##     | WHILE LPARENS exp RPARENS cmd
-##     | PRINTLN LPARENS exp RPARENS SEMICOLON
-##     | ID ASSIGN exp SEMICOLON
-##    | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
-##exp => exp AND rexp
-##     | rexp
-##rexp => rexp LTHAN aexp
-##    | rexp  EQUALS aexp
-##    | rexp DIFFERENT aexp
-##    | aexp
-##aexp => aexp PLUS mexp
-##    | aexp MINUS mexp
-##    | mexp
-##mexp => mexp TIMES sexp
-##  | sexp
-## sexp =>NOT sexp
-##    | MINUS sexp
-##    | TRUE
-##    | FALSE
-##    | NUM
-??    | NULL 
-??    | NEW INT LBRACKET exp RBRACKET
-??    | pexp DOT LENGTH
-??    | ID DOT LENGTH
-??    | pexp LBRACKET exp RBRACKET
-??    | ID LBRACKET exp RBRACKET
-??    | ID
+     | IF LPARENS exp RPARENS cmd
+     | IF LPARENS exp RPARENS cmd ELSE cmd
+     | WHILE LPARENS exp RPARENS cmd
+     | PRINTLN LPARENS exp RPARENS SEMICOLON
+     | ID ASSIGN exp SEMICOLON
+    | ID LBRACKET exp RBRACKET ASSIGN exp SEMICOLON
+exp => exp AND rexp
+     | rexp
+rexp => rexp LTHAN aexp
+    | rexp  EQUALS aexp
+    | rexp DIFFERENT aexp
+    | aexp
+aexp => aexp PLUS mexp
+    | aexp MINUS mexp
+    | mexp
+mexp => mexp TIMES sexp
+  | sexp
+ sexp =>NOT sexp
+    | MINUS sexp
+    | TRUE
+    | FALSE
+    | NUM
+    | NULL 
+    | NEW INT LBRACKET exp RBRACKET
+    | pexp DOT LENGTH
+    | ID DOT LENGTH
+    | pexp LBRACKET exp RBRACKET
+    | ID LBRACKET exp RBRACKET
+    | ID
 pexp => THIS
     | NEW ID LPARENS RPARENS
     | LPARENS exp RPARENS
