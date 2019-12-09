@@ -4,14 +4,14 @@ class Factorial{
     }
 }
 class Fac {
-    public int ComputeFac(int num){
+    public int Compute2(int num){
         int jose;
         djsakldsa = 6;
         return 6;
     }
 }
 class OutraClasse {
-    public int ComputeFac2(int num, int blabla, int hdsuaihdsau){
+    public int Compute2(int num, int blabla, int hdsuaihdsau){
         int jose;
         djsakldsa = 5;
         return 5;
