@@ -56,8 +56,7 @@ def cgenparams(entrada):
 def cgenmetodo(entrada):
     print(len(entrada))
     print(entrada)
-    current_branch = branchcounter
-    label_func = "func{}".format(current_branch)
+    label_func = entrada[3]
     print("{}:".format(label_func))
     print("move $fp $sp")
     print("sw $ra 0($sp)")
@@ -66,7 +65,6 @@ def cgenmetodo(entrada):
 
     cgen(entrada[9])
     cgen(entrada[11])
-    add_branch_counter()
 
 def cgencmd(entrada):
     if len(entrada) == 9 and entrada[1] == "if":
