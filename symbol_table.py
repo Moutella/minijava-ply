@@ -50,21 +50,23 @@ def current_class(classe):
 def add_method(classe, method):
     if method in classless_methods:
         if classe in method_list:
-            method_list[classe].append(method)
+            method_list[classe].update(method)
         else:
-            method_list[classe] = [method]
+            method_list[classe] = method
         classless_methods.remove(method)
 
 def search_method(classe, method, linenumber=0):
     if classe in method_list:
-        if method not in method_list[classe]:
-            print("Method {} referenced at line {} from class {} is not defined".format(classe, linenumber, method))
+        if method in method_list[classe]:
+            pass
+        else:
+            print("Method {} referenced at line {} from class {} is not defined".format(method, linenumber, classe))
     else:
-        print("Method {} referenced at line {} from class {} is not defined".format(classe, linenumber, method))
+        print("Method {} referenced at line {} from class {} is not defined".format(method, linenumber, classe))
 
 def verify_method_params(num, method, classe, linenumber=0):
     if classe in method_list:
         if method in method_list[classe]:
             if num == method_list[classe][method]['size']:
                 return True
-    print("Method {} referenced at line {} from class {} is being called with the wrong number of parameters".format( method, linenumber, classe))
+            print("Method {} referenced at line {} from class {} is being called with the wrong number of parameters".format( method, linenumber, classe))
