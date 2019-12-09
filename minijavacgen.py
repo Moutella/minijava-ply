@@ -83,7 +83,6 @@ def cgenmetodo(entrada):
     print("Print metodo!", entrada[5])
     cgen(entrada[9])
     cgen(entrada[11])
-    add_branch_counter()
 
 def cgencmd(entrada):
     if len(entrada) == 9 and entrada[1] == "if":
